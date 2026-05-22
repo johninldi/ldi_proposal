@@ -1,0 +1,1028 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI BOOM × CIVIC ACTION — Let's Do It Taiwan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elevated: #122435;
+    --bg-card: #0f1e2c;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --baltic-deep: #3d6b94;
+    --pacific: #e8a268;
+    --pacific-deep: #b87440;
+    --warning: #d97757;
+    --green: #7fb069;
+    --rule: rgba(212, 201, 168, 0.15);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    padding: 60px 40px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(232, 162, 104, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(107, 155, 209, 0.04) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1140px; margin: 0 auto; }
+
+  /* HEADER */
+  .doc-header {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 40px 0;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .doc-title-en {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--parchment);
+    margin-bottom: 10px;
+  }
+  .doc-title-en em {
+    font-style: italic;
+    color: var(--pacific);
+    font-weight: 300;
+  }
+  .doc-title-tc {
+    font-family: var(--serif-tc);
+    font-size: 17px;
+    color: var(--ink-dim);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+  }
+  .doc-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-align: right;
+  }
+  .doc-meta div { margin-bottom: 4px; }
+
+  /* INTRO */
+  .intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink);
+    font-weight: 300;
+    max-width: 820px;
+    margin-bottom: 70px;
+    padding-left: 16px;
+    border-left: 2px solid var(--pacific);
+  }
+  .intro-tc {
+    font-family: var(--serif-tc);
+    display: block;
+    font-style: normal;
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    margin-top: 10px;
+    line-height: 1.7;
+  }
+
+  /* FIGURE */
+  .figure {
+    margin-bottom: 110px;
+    position: relative;
+  }
+  .fig-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .fig-title-en {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.15;
+    color: var(--parchment);
+    margin-bottom: 6px;
+    max-width: 900px;
+    letter-spacing: -0.01em;
+  }
+  .fig-title-en em { font-style: italic; color: var(--baltic); font-weight: 300; }
+  .fig-title-tc {
+    font-family: var(--serif-tc);
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--ink-dim);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+  .fig-subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-dim);
+    font-weight: 300;
+    margin-bottom: 44px;
+    max-width: 800px;
+    line-height: 1.5;
+  }
+  .fig-subtitle-tc {
+    font-family: var(--serif-tc);
+    font-style: normal;
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+
+  /* ============ FIGURE 01 — MONEY FLOW DIAGRAM ============ */
+  .flow-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 40px 32px;
+    margin-bottom: 28px;
+  }
+  .flow-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    position: relative;
+  }
+  .flow-grid::before, .flow-grid::after {
+    content: '↓';
+    position: absolute;
+    top: 50%;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--pacific);
+    opacity: 0.5;
+    z-index: 2;
+    transform: translateY(-50%);
+  }
+  .flow-grid::before { left: 33.33%; transform: translate(-50%, -50%) rotate(-90deg); }
+  .flow-grid::after { left: 66.66%; transform: translate(-50%, -50%) rotate(-90deg); }
+  .flow-col {
+    padding: 0 22px;
+    border-right: 1px dotted var(--rule);
+  }
+  .flow-col:last-child { border-right: none; }
+  .flow-col:first-child { padding-left: 0; }
+  .flow-col-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .flow-col-tag.source { color: var(--pacific); }
+  .flow-col-tag.flow { color: var(--parchment); }
+  .flow-col-tag.impact { color: var(--warning); }
+  .flow-col-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--parchment);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .flow-col-tc {
+    font-family: var(--serif-tc);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    margin-bottom: 16px;
+  }
+  .flow-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .flow-item:last-child { border-bottom: none; }
+  .flow-item-name {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .flow-item-detail {
+    font-family: var(--serif-tc);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .flow-item-detail strong {
+    color: var(--pacific);
+    font-weight: 500;
+    font-family: var(--mono);
+    font-size: 11.5px;
+  }
+
+  /* ============ FIGURE 02 — SEVEN OPERATIONAL SPACES ============ */
+  .spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .space-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 24px 26px;
+    position: relative;
+    border-top: 2px solid var(--pacific);
+  }
+  .space-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--pacific);
+    line-height: 1;
+    opacity: 0.5;
+    position: absolute;
+    top: 12px;
+    right: 24px;
+  }
+  .space-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .space-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.2;
+    margin-bottom: 2px;
+    padding-right: 50px;
+  }
+  .space-title em { font-style: italic; font-weight: 300; }
+  .space-tc {
+    font-family: var(--serif-tc);
+    font-size: 13px;
+    color: var(--ink-dim);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .space-block {
+    margin-bottom: 12px;
+  }
+  .space-block:last-child { margin-bottom: 0; }
+  .space-block-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .space-block-text {
+    font-family: var(--serif-tc);
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .space-block-text strong {
+    color: var(--parchment);
+    font-weight: 500;
+  }
+  .space-block-text em {
+    color: var(--pacific);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  /* Featured/highlighted card */
+  .space-card.featured {
+    border-top: 2px solid var(--warning);
+    grid-column: span 2;
+  }
+  .space-card.featured .space-num { color: var(--warning); }
+  .space-card.featured .space-tag { color: var(--warning); }
+
+  /* ============ FIGURE 03 — 2026 POLICY WINDOW ============ */
+  .policy-timeline {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 36px 32px;
+    margin-bottom: 32px;
+  }
+  .timeline-line {
+    position: relative;
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+  .timeline-rail {
+    height: 2px;
+    background: linear-gradient(90deg, var(--baltic), var(--parchment), var(--pacific), var(--warning));
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .timeline-points {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .timeline-point {
+    position: relative;
+    padding-top: 0;
+    text-align: center;
+  }
+  .timeline-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: -27px auto 14px;
+    border: 3px solid var(--bg-card);
+    position: relative;
+    z-index: 2;
+  }
+  .timeline-marker.p1 { background: var(--baltic); }
+  .timeline-marker.p2 { background: var(--parchment); }
+  .timeline-marker.p3 { background: var(--pacific); }
+  .timeline-marker.p4 { background: var(--warning); }
+  .timeline-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .timeline-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .timeline-desc {
+    font-family: var(--serif-tc);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  .timeline-action {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dotted var(--rule);
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--pacific);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  /* ============ FIGURE 04 — TASK MATRIX ============ */
+  .matrix {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 0;
+    overflow: hidden;
+  }
+  .matrix-header {
+    display: grid;
+    grid-template-columns: 180px repeat(5, 1fr);
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--rule);
+  }
+  .matrix-corner {
+    padding: 18px 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    border-right: 1px solid var(--rule);
+  }
+  .matrix-task {
+    padding: 16px 12px;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+  }
+  .matrix-task:last-child { border-right: none; }
+  .matrix-task-num {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--baltic);
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+  .matrix-task-name {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--parchment);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .matrix-task-name small {
+    display: block;
+    font-family: var(--serif-tc);
+    font-size: 10.5px;
+    color: var(--ink-dim);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  .matrix-row {
+    display: grid;
+    grid-template-columns: 180px repeat(5, 1fr);
+    border-bottom: 1px solid var(--rule);
+  }
+  .matrix-row:last-child { border-bottom: none; }
+  .matrix-space {
+    padding: 16px 14px;
+    border-right: 1px solid var(--rule);
+    background: rgba(232, 162, 104, 0.04);
+  }
+  .matrix-space-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--pacific);
+    letter-spacing: 0.15em;
+    margin-bottom: 3px;
+  }
+  .matrix-space-title {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--parchment);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .matrix-space-title small {
+    display: block;
+    font-family: var(--serif-tc);
+    font-size: 11px;
+    color: var(--ink-dim);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  .matrix-cell {
+    padding: 16px 10px;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+  .matrix-cell:last-child { border-right: none; }
+  .matrix-cell.strong { color: var(--pacific); font-weight: 700; font-size: 18px; }
+  .matrix-cell.medium { color: var(--baltic); font-weight: 600; }
+  .matrix-cell.weak { color: var(--ink-faint); }
+
+  /* CLOSING */
+  .closing {
+    margin-top: 80px;
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .closing-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--parchment);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .closing-text {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 820px;
+    margin: 0 auto 14px;
+    letter-spacing: -0.005em;
+  }
+  .closing-text em { font-style: italic; color: var(--pacific); }
+  .closing-tc {
+    font-family: var(--serif-tc);
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .footer {
+    margin-top: 50px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  @media (max-width: 820px) {
+    body { padding: 32px 20px; }
+    .doc-title-en { font-size: 36px; }
+    .doc-meta { text-align: left; }
+    .fig-title-en { font-size: 26px; }
+    .flow-grid { grid-template-columns: 1fr; gap: 20px; }
+    .flow-grid::before, .flow-grid::after { display: none; }
+    .flow-col { border-right: none; border-bottom: 1px dotted var(--rule); padding: 0 0 20px 0; }
+    .flow-col:last-child { border-bottom: none; }
+    .spaces-grid { grid-template-columns: 1fr; }
+    .space-card.featured { grid-column: span 1; }
+    .timeline-points { grid-template-columns: 1fr; gap: 20px; }
+    .timeline-rail { display: none; }
+    .timeline-marker { margin: 0 0 8px 0; }
+    .matrix-header, .matrix-row { grid-template-columns: 1fr; }
+    .matrix-corner, .matrix-task, .matrix-space, .matrix-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+    .closing-text { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div>
+      <h1 class="doc-title-en">AI BOOM × <em>CIVIC ACTION</em></h1>
+      <div class="doc-title-tc">從 AI 狂熱中找到 Let's Do It Taiwan 的施力空間</div>
+    </div>
+    <div class="doc-meta">
+      <div>Strategic Report · 2026</div>
+      <div>4 Figures</div>
+      <div>Final piece of the series</div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Taiwan is at a strange moment: a global AI gold rush is pouring through TSMC, Foxconn, and the cooling supply chain — while the same island faces unresolved wastewater, PFAS, and ocean debris problems. The boom is a once-in-a-generation civic opportunity. Here's how Let's Do It Taiwan can use it.
+    <span class="intro-tc">台灣正處在一個奇特的時刻:全球 AI 狂潮正流經台積電、鴻海與整個散熱供應鏈,但這座島嶼同時還有未解決的廢水、PFAS、海洋廢棄物問題。這場熱潮是一個世代難得的公民機會。本報告分析 Let's Do It Taiwan 如何運用它。</span>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- FIGURE 01 — MONEY FLOW -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 01 — Money Flow · Where AI Wealth Lands &amp; What It Costs</div>
+    <h2 class="fig-title-en">Following the <em>Money</em></h2>
+    <div class="fig-title-tc">追蹤錢的流向 — 從 AI 紅利到環境衝擊</div>
+    <p class="fig-subtitle">Where the AI capital lands, what it consumes, and where civic action can intercept.
+      <span class="fig-subtitle-tc">AI 資本流到哪裡、消耗什麼、公民行動可以在哪一段攔截。</span>
+    </p>
+
+    <div class="flow-wrap">
+      <div class="flow-grid">
+
+        <!-- SOURCE: Where money comes from -->
+        <div class="flow-col">
+          <div class="flow-col-tag source">▲ SOURCE · 紅利來源</div>
+          <div class="flow-col-title">The AI Cash Flow</div>
+          <div class="flow-col-tc">AI 紅利從哪裡來</div>
+
+          <div class="flow-item">
+            <div class="flow-item-name">TSMC · 台積電</div>
+            <div class="flow-item-detail">全球 AI 晶片代工龍頭。CoWoS 產能持續擴張,輝達、AMD、Google TPU 都仰賴。<strong>市值 全球前 10</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Foxconn · 鴻海</div>
+            <div class="flow-item-detail">與輝達在<strong>高雄合建 100 MW AI 中心</strong>;AI 伺服器組裝供應鏈龍頭</div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Delta · 台達電</div>
+            <div class="flow-item-detail">水冷+電源整合,2025 前三季 AI 基礎建設營收 <strong>1,229 億、年增 546%</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Auras, Asia Vital, AVC 等散熱廠</div>
+            <div class="flow-item-detail">水冷散熱模組,2025 前三季產業年增 <strong>65%+</strong>,全年產值估 <strong>2,666 億</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Retail Investors · 台股散戶</div>
+            <div class="flow-item-detail">台股創歷史新高,大量散戶持有 AI 概念股有 <strong>未實現獲利</strong></div>
+          </div>
+        </div>
+
+        <!-- FLOW: What it consumes -->
+        <div class="flow-col">
+          <div class="flow-col-tag flow">◆ CONSUMPTION · 消耗</div>
+          <div class="flow-col-title">What AI Eats</div>
+          <div class="flow-col-tc">AI 在台灣吃掉什麼</div>
+
+          <div class="flow-item">
+            <div class="flow-item-name">Electricity · 電力</div>
+            <div class="flow-item-detail">半導體製造 <strong>佔全國 ~15%</strong>;1 GW AI 中心 = 30 萬人 = 嘉義市</div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Water · 水資源</div>
+            <div class="flow-item-detail">水冷散熱普及,半導體本就最耗水的產業;<strong>台灣本就缺水</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">PFAS · 永久化學物質</div>
+            <div class="flow-item-detail">半導體製程使用 PFAS(光阻劑、蝕刻液);<strong>排放與外洩潛在風險</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Ammonia &amp; chemicals · 氨氮、化學品</div>
+            <div class="flow-item-detail">先進製程廢水含氮、磷、有機物;<strong>未來進入河川與海洋</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Land &amp; grid · 土地與電網</div>
+            <div class="flow-item-detail">資料中心選址近發電廠;<strong>南北資源不均加劇</strong></div>
+          </div>
+        </div>
+
+        <!-- IMPACT: Where it ends up -->
+        <div class="flow-col">
+          <div class="flow-col-tag impact">! IMPACT · 衝擊</div>
+          <div class="flow-col-title">Where It Lands</div>
+          <div class="flow-col-tc">最後流到哪裡</div>
+
+          <div class="flow-item">
+            <div class="flow-item-name">Pacific Ocean · 太平洋</div>
+            <div class="flow-item-detail">河川 → 海洋,微塑膠、化學物、暖水排放;<strong>沿海 13 採樣站全驗出微塑膠</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Drinking water · 飲用水</div>
+            <div class="flow-item-detail">PFAS 已驗出超過國際標準;<strong>2027.7 才全面實施抽驗</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Coastal communities · 沿海社區</div>
+            <div class="flow-item-detail">高雄、台南、新竹的科學園區下游<strong>承擔不成比例的健康風險</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">Global climate · 全球氣候</div>
+            <div class="flow-item-detail">化石燃料電力支撐 AI →<strong>加速太平洋島國淹沒</strong></div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-item-name">CIVIC INTERCEPT POINT</div>
+            <div class="flow-item-detail" style="color:var(--pacific); font-weight:500;">↑ 這裡是 Let's Do It Taiwan 的<strong>七個施力空間</strong>所在</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FIGURE 02 — SEVEN OPERATIONAL SPACES -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 02 — Seven Operational Spaces · 七大施力空間</div>
+    <h2 class="fig-title-en">Seven <em>Levers</em> in the Boom</h2>
+    <div class="fig-title-tc">在這場狂熱中,有七個可以撬動的槓桿</div>
+    <p class="fig-subtitle">Each space turns a feature of the AI boom into a civic action opportunity.
+      <span class="fig-subtitle-tc">每一個空間,都把 AI 狂熱的某個特徵,翻譯成一個公民行動的機會。</span>
+    </p>
+
+    <div class="spaces-grid">
+
+      <!-- SPACE 1 -->
+      <div class="space-card">
+        <div class="space-num">01</div>
+        <div class="space-tag">SUPPLY CHAIN CSR</div>
+        <h3 class="space-title">The Cooling <em>Dividend</em></h3>
+        <div class="space-tc">把水冷供應鏈紅利轉化為環境投資</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">台達電、奇鋐、雙鴻 2025 散熱業務暴增 <strong>65%+</strong>,現金部位飽滿,面對 ESG 揭露壓力。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">主動接觸這些公司,提案「<em>每億元 AI 營收回饋 X% 給海洋治理</em>」——不是要捐錢,而是<strong>績效對接 ESG 報告書</strong>:N 場淨灘、X 公斤海廢、Y 篇監測報告。</div>
+        </div>
+      </div>
+
+      <!-- SPACE 2 -->
+      <div class="space-card">
+        <div class="space-num">02</div>
+        <div class="space-tag">TRANSPARENCY LABEL</div>
+        <h3 class="space-title">Taiwan <em>AI Water Label</em></h3>
+        <div class="space-tc">推動 AI 用水與用電透明度標章</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">Google 已揭露 Gemini 每次提示 <strong>0.26 mL 水</strong>。台灣 AI 公司未對應揭露。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">倡議「<em>台灣 AI 透明度標章</em>」,要求揭露每 token 的水/碳足跡;與 2021 大旱對照,把抽象數字轉成在地敘事;<strong>邀請年輕 AI 工程師加入運動</strong>。</div>
+        </div>
+      </div>
+
+      <!-- SPACE 3 -->
+      <div class="space-card">
+        <div class="space-num">03</div>
+        <div class="space-tag">DIVIDEND DONATION</div>
+        <h3 class="space-title">The <em>Green Dividend</em></h3>
+        <div class="space-tc">把股利的一部分自動導入環境基金</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">台股創高,AI 概念股股利豐厚;散戶有實現獲利,但缺乏「<strong>有意義的回饋管道</strong>」。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">與券商合作「<em>綠色股利信託</em>」,AI 股股利的 1–5% 自動捐贈;對標 Robinhood Round-up;<strong>定期回報具體環境成果</strong>。</div>
+        </div>
+      </div>
+
+      <!-- SPACE 4 -->
+      <div class="space-card">
+        <div class="space-num">04</div>
+        <div class="space-tag">COAST ADOPTION</div>
+        <h3 class="space-title">Adopt a <em>Coast</em></h3>
+        <div class="space-tc">把企業淨灘升級為長期認養</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">每年數百場企業員工淨灘,90% 是<strong>一次性 CSR 拍照活動</strong>。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">推出「<em>台灣海岸認養計畫</em>」:1,520 km 海岸切成 100 段,每段交給一家科技公司<strong>5–10 年長期認養</strong>。Let's Do It 提供方法、訓練、認證、ESG 素材。把淨灘變成可審計的 KPI。</div>
+        </div>
+      </div>
+
+      <!-- SPACE 5 -->
+      <div class="space-card">
+        <div class="space-num">05</div>
+        <div class="space-tag">CARBON FEE REINVEST</div>
+        <h3 class="space-title">Carbon Fee <em>→ Ocean</em></h3>
+        <div class="space-tc">推動碳費收入專款投入海洋治理</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">2024 開徵碳費,2025 大戶繳費——台積電、中鋼、台塑等。<strong>碳費用途仍在規劃</strong>。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">倡議碳費部分專款用於「<em>海洋保育 + 廢水升級 + PFAS 監測</em>」;定位 Let's Do It 為執行夥伴之一;對標歐盟海洋戰略框架指令。</div>
+        </div>
+      </div>
+
+      <!-- SPACE 6 -->
+      <div class="space-card">
+        <div class="space-num">06</div>
+        <div class="space-tag">AI FOR OCEAN</div>
+        <h3 class="space-title">Hackathon for the <em>Sea</em></h3>
+        <div class="space-tc">把台灣 AI 人才導向海洋公民科學</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">台灣有<strong>大量願意做志願專案的工程師</strong>(g0v、Hackathon 文化深厚)。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">辦「<em>AI for Ocean Hackathon</em>」——海廢辨識 App、無人機海岸巡護、即時水質視覺化儀表板。把 AI 從<strong>賺錢工具升級為公共財</strong>。對應 Let's Do It 五大任務的「科技解決方案」。</div>
+        </div>
+      </div>
+
+      <!-- SPACE 7 - FEATURED -->
+      <div class="space-card featured">
+        <div class="space-num">07</div>
+        <div class="space-tag">POLICY WINDOW</div>
+        <h3 class="space-title">The 2026 <em>Window</em></h3>
+        <div class="space-tc">2026 是台灣環境政策的關鍵交匯年——這是七個空間中時機最敏感的一個</div>
+        <div class="space-block">
+          <div class="space-block-label">現況 · context</div>
+          <div class="space-block-text">四個重大政策節點將在 <strong>2026 年同時交匯</strong>:AI 資料中心新管理規則、NDC 3.0 修訂、PFAS 飲用水標準前一年、2030 主要河川零嚴重污染中期檢討。</div>
+        </div>
+        <div class="space-block">
+          <div class="space-block-label">操作 · action</div>
+          <div class="space-block-text">Let's Do It Taiwan <strong>現在</strong>就建立「<em>2026 政策提問清單</em>」,在每個關鍵時點公開發聲。把累積數據+國際對標變成<strong>輿論壓力</strong>。請見 Figure 03 詳細時程。</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FIGURE 03 — 2026 POLICY WINDOW -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 03 — 2026 Policy Window · 政策時程</div>
+    <h2 class="fig-title-en">Four <em>Pressure Points</em> in One Year</h2>
+    <div class="fig-title-tc">2026 一年內,四個施壓時機交匯</div>
+    <p class="fig-subtitle">A rare convergence: four major environmental policies all reach key moments in 2026.
+      <span class="fig-subtitle-tc">一個罕見的交匯:四個關鍵環境政策都在 2026 年到達關鍵節點。</span>
+    </p>
+
+    <div class="policy-timeline">
+      <div class="timeline-line">
+        <div class="timeline-rail"></div>
+        <div class="timeline-points">
+
+          <div class="timeline-point">
+            <div class="timeline-marker p1"></div>
+            <div class="timeline-date">2026 Q1–Q2</div>
+            <div class="timeline-title">AI 資料中心新管理規則</div>
+            <div class="timeline-desc">台電研議的新規則預計 2026 出爐——這是公民團體<strong>現在介入最有效</strong>的時點。應納入水資源、海洋廢棄物、社區諮詢等外部性指標。</div>
+            <div class="timeline-action">→ ACTION:提交公民團體版規則草案</div>
+          </div>
+
+          <div class="timeline-point">
+            <div class="timeline-marker p2"></div>
+            <div class="timeline-date">2026 全年</div>
+            <div class="timeline-title">NDC 3.0 修訂</div>
+            <div class="timeline-desc">環境部承諾推出新國家自定貢獻(NDC 3.0)。現行 24±1% 被批太低,連環境部長都不滿意。推動目標<strong>提高至 35%+</strong>。</div>
+            <div class="timeline-action">→ ACTION:聯合 TCAN 加碼施壓</div>
+          </div>
+
+          <div class="timeline-point">
+            <div class="timeline-marker p3"></div>
+            <div class="timeline-date">2026 H2</div>
+            <div class="timeline-title">PFAS 飲用水標準倒數</div>
+            <div class="timeline-desc">2027.7 全面實施前一年,是<strong>加嚴標準的倡議高峰</strong>。台灣現行 50 ng/L 比美國 EPA 寬鬆 6 倍以上。應對齊國際。</div>
+            <div class="timeline-action">→ ACTION:發布國際對標報告</div>
+          </div>
+
+          <div class="timeline-point">
+            <div class="timeline-marker p4"></div>
+            <div class="timeline-date">2026 末 → 2027</div>
+            <div class="timeline-title">2030 河川治理中期檢討</div>
+            <div class="timeline-desc">環境部 2024 承諾「2030 主要 50 條河川零嚴重污染」。2026 是中期檢討時機。Let's Do It 累積的<strong>淨灘公民科學數據</strong>是輿論武器。</div>
+            <div class="timeline-action">→ ACTION:公布河川/海岸水質白皮書</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FIGURE 04 — TASK MATRIX -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 04 — Strategy Matrix · 策略對位</div>
+    <h2 class="fig-title-en">How the Seven Spaces Map to the <em>Five Tasks</em></h2>
+    <div class="fig-title-tc">七大施力空間 × Let's Do It 五大任務 — 策略對位矩陣</div>
+    <p class="fig-subtitle">Each of the seven new operational spaces serves at least one of Let's Do It's five core tasks. This is not a pivot — it's an evolution.
+      <span class="fig-subtitle-tc">這七個新的施力空間都對應到 Let's Do It 既有的五大任務之一以上——這不是轉向,而是進化。</span>
+    </p>
+
+    <div class="matrix">
+      <div class="matrix-header">
+        <div class="matrix-corner">SPACES × TASKS<br>七空間 × 五任務</div>
+        <div class="matrix-task">
+          <div class="matrix-task-num">TASK 01</div>
+          <div class="matrix-task-name">Cleanup<small>淨灘清理</small></div>
+        </div>
+        <div class="matrix-task">
+          <div class="matrix-task-num">TASK 02</div>
+          <div class="matrix-task-name">Monitor<small>海洋觀察</small></div>
+        </div>
+        <div class="matrix-task">
+          <div class="matrix-task-num">TASK 03</div>
+          <div class="matrix-task-name">Tech<small>科技解方</small></div>
+        </div>
+        <div class="matrix-task">
+          <div class="matrix-task-num">TASK 04</div>
+          <div class="matrix-task-name">Enterprise<small>企業參與</small></div>
+        </div>
+        <div class="matrix-task">
+          <div class="matrix-task-num">TASK 05</div>
+          <div class="matrix-task-name">Global<small>全球串連</small></div>
+        </div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 01</div>
+          <div class="matrix-space-title">Cooling Dividend<small>水冷供應鏈紅利</small></div>
+        </div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell weak">○</div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 02</div>
+          <div class="matrix-space-title">AI Water Label<small>AI 透明度標章</small></div>
+        </div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell strong">★</div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 03</div>
+          <div class="matrix-space-title">Green Dividend<small>股利導入</small></div>
+        </div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell weak">○</div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 04</div>
+          <div class="matrix-space-title">Adopt a Coast<small>海岸認養</small></div>
+        </div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell medium">●</div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 05</div>
+          <div class="matrix-space-title">Carbon Fee Reinvest<small>碳費海洋導入</small></div>
+        </div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell weak">○</div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 06</div>
+          <div class="matrix-space-title">AI for Ocean<small>海洋黑客松</small></div>
+        </div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell strong">★</div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-space">
+          <div class="matrix-space-num">SPACE 07</div>
+          <div class="matrix-space-title">2026 Window<small>2026 政策窗口</small></div>
+        </div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell strong">★</div>
+        <div class="matrix-cell weak">○</div>
+        <div class="matrix-cell medium">●</div>
+        <div class="matrix-cell strong">★</div>
+      </div>
+
+    </div>
+
+    <p style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-dim); margin-top: 16px; text-align: right; letter-spacing: 0.05em;">
+      ★ Strong fit · ● Medium fit · ○ Weak/peripheral fit
+    </p>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="closing-tag">⌖ THE STRATEGIC INSIGHT · 戰略洞察</div>
+    <div class="closing-text">AI is mining Taiwan's water, electricity, and silicon. Civic action's job is to make the bill <em>visible</em>, and then make it <em>paid</em>.</div>
+    <div class="closing-tc">AI 正在開採台灣的水、電、矽。公民行動的工作是讓帳單<em>顯形</em>,然後讓它被<em>支付</em>。Let's Do It Taiwan 的最大戰略空間,就是把愛沙尼亞的「我們動手做吧」精神,翻譯成 2026 年的台灣語言:我們動手讓 AI 付出它應該付出的代價。</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Sources: 環境部 · 台電 · IDC Taiwan · 報導者 · TechNews · 工研院 · CSR@天下</span>
+    <span>Final report of the Baltic-Pacific series · 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

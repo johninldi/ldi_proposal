@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水質檢測合作提案信 — Let's Do It Taiwan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elevated: #122435;
+    --bg-card: #0f1e2c;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --baltic-deep: #3d6b94;
+    --pacific: #e8a268;
+    --pacific-deep: #b87440;
+    --warning: #d97757;
+    --green: #7fb069;
+    --rule: rgba(212, 201, 168, 0.15);
+    --rule-strong: rgba(212, 201, 168, 0.3);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif-tc);
+    line-height: 1.75;
+    padding: 60px 40px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(232, 162, 104, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(107, 155, 209, 0.04) 0%, transparent 50%);
+    min-height: 100vh;
+    font-size: 16px;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+
+  /* LETTERHEAD */
+  .letterhead {
+    text-align: center;
+    padding: 30px 0 24px;
+    border-bottom: 1px solid var(--rule-strong);
+    margin-bottom: 50px;
+  }
+  .letterhead-tc {
+    font-family: var(--serif-tc);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--parchment);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .letterhead-en {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--pacific);
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+  }
+  .letterhead-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* DOC NAV BAR */
+  .doc-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    margin-bottom: 40px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .doc-nav-title { color: var(--parchment); font-weight: 600; }
+  .doc-nav-meta { color: var(--ink-dim); }
+
+  /* META LINE */
+  .meta-line {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 28px;
+    font-family: var(--serif-tc);
+    color: var(--ink-dim);
+    font-size: 14px;
+  }
+  .meta-line .blank {
+    display: inline-block;
+    min-width: 60px;
+    border-bottom: 1px dashed var(--ink-faint);
+    margin: 0 4px;
+  }
+
+  /* ADDRESSEE */
+  .addressee-block {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+  .addressee-line {
+    margin-bottom: 10px;
+    font-size: 15.5px;
+  }
+  .addressee-line:last-child { margin-bottom: 0; }
+  .blank {
+    display: inline-block;
+    min-width: 200px;
+    border-bottom: 1px dashed var(--pacific);
+    color: transparent;
+    user-select: text;
+  }
+  .blank.short { min-width: 100px; }
+  .blank.long { min-width: 320px; }
+
+  /* SUBJECT */
+  .subject-line {
+    background: var(--bg-elevated);
+    padding: 16px 24px;
+    margin-bottom: 50px;
+    border-top: 2px solid var(--parchment);
+    border-bottom: 2px solid var(--parchment);
+    font-size: 16px;
+  }
+  .subject-line strong {
+    font-weight: 600;
+    color: var(--parchment);
+    margin-right: 8px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 44px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--parchment);
+    letter-spacing: -0.005em;
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--pacific);
+  }
+  .section-title-tc {
+    font-family: var(--serif-tc);
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--parchment);
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .section-body {
+    margin-top: 16px;
+  }
+  .section-body p {
+    margin-bottom: 14px;
+    text-align: justify;
+    line-height: 1.85;
+    color: var(--ink);
+    font-size: 15.5px;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--pacific);
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NUMBERED ITEMS */
+  .num-item {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    border-left: 2px solid var(--baltic);
+  }
+  .num-item-head {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--parchment);
+    margin-bottom: 6px;
+  }
+  .num-item-head .num {
+    color: var(--pacific);
+    font-family: var(--mono);
+    font-size: 13px;
+    margin-right: 8px;
+    letter-spacing: 0.1em;
+  }
+  .num-item-body {
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    line-height: 1.75;
+  }
+
+  /* BULLETS */
+  ul.list {
+    list-style: none;
+    margin: 12px 0;
+  }
+  ul.list li {
+    padding-left: 22px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  ul.list li::before {
+    content: '◦';
+    position: absolute;
+    left: 4px;
+    color: var(--pacific);
+    font-weight: bold;
+  }
+  ul.list li strong {
+    color: var(--parchment);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  /* CLOSING */
+  .closing {
+    margin: 50px 0 30px;
+  }
+  .closing-italic {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+  .closing-formal {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  .closing-formal div {
+    margin-bottom: 6px;
+  }
+  .closing-formal .indent {
+    padding-left: 36px;
+    font-weight: 600;
+    color: var(--parchment);
+  }
+
+  /* SIGNATURE BLOCK */
+  .signature {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 22px 24px;
+    text-align: right;
+    margin-top: 30px;
+  }
+  .signature-org {
+    font-family: var(--serif-tc);
+    font-weight: 600;
+    color: var(--parchment);
+    font-size: 16.5px;
+    margin-bottom: 10px;
+  }
+  .signature .line {
+    font-size: 14px;
+    color: var(--ink-dim);
+    margin-bottom: 6px;
+  }
+
+  /* ATTACHMENTS */
+  .attachments {
+    margin-top: 40px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule-strong);
+  }
+  .attachments-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--parchment);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  /* PAGE BREAK */
+  .page-break {
+    margin: 80px 0 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rule-strong), transparent);
+  }
+
+  /* PART HEADER */
+  .part-header {
+    margin: 40px 0 30px;
+  }
+  .part-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .part-title-en {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--parchment);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .part-title-en em {
+    font-style: italic;
+    color: var(--pacific);
+    font-weight: 300;
+  }
+  .part-title-tc {
+    font-family: var(--serif-tc);
+    font-size: 15px;
+    color: var(--ink-dim);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .part-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+  .part-desc-tc {
+    font-style: normal;
+    display: block;
+    margin-top: 4px;
+    font-family: var(--serif-tc);
+    font-size: 13.5px;
+  }
+
+  /* EMAIL VERSION */
+  .email-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 0;
+    margin: 24px 0;
+    overflow: hidden;
+  }
+  .email-header {
+    background: var(--bg-elevated);
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .email-subject {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15.5px;
+  }
+  .email-subject strong {
+    font-weight: 600;
+    color: var(--parchment);
+    margin-right: 10px;
+  }
+  .email-body {
+    padding: 24px 26px;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .email-body p {
+    margin-bottom: 14px;
+    text-align: justify;
+    color: var(--ink);
+  }
+  .email-body .blank {
+    border-bottom: 1px dashed var(--pacific);
+  }
+  .email-signature {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--rule);
+    font-size: 14px;
+    color: var(--ink-dim);
+  }
+  .email-signature .name {
+    color: var(--parchment);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  /* TIPS CARD */
+  .tip-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+  .tip-card-title {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pacific);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .tip-card-body {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .tip-card-body p { margin-bottom: 8px; }
+
+  .checklist {
+    list-style: none;
+  }
+  .checklist li {
+    padding: 8px 0 8px 32px;
+    position: relative;
+    font-size: 14.5px;
+    line-height: 1.65;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    color: var(--pacific);
+    font-size: 16px;
+  }
+  .checklist li.warning::before {
+    content: '⚠';
+    color: var(--warning);
+  }
+
+  /* FINAL QUOTE */
+  .final-quote {
+    text-align: center;
+    padding: 40px 24px;
+    margin-top: 50px;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .final-quote-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .final-quote-attr {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 60px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body {
+      background: white;
+      color: #000;
+      padding: 0;
+      background-image: none;
+    }
+    .container { max-width: none; }
+    .letterhead-tc { color: #0F2C4A; }
+    .letterhead-en { color: #B87440; }
+    .letterhead-tag { color: #555; }
+    .doc-nav { display: none; }
+    .meta-line, .addressee-line, .section-body p, .num-item-body, .closing-italic { color: #000; }
+    .blank { border-bottom-color: #999; }
+    .addressee-block, .num-item, .callout, .tip-card, .signature, .email-card, .subject-line {
+      background: #FFF;
+      border-color: #CCC;
+    }
+    .subject-line strong, .section-title, .section-title-tc, .num-item-head, .signature-org { color: #0F2C4A; }
+    .num-item-head .num, .section-num, .part-num, .pacific { color: #B87440; }
+    .part-title-en, .part-title-tc { color: #0F2C4A; }
+    .page-break { page-break-before: always; height: 0; }
+    .final-quote { border-color: #ccc; }
+  }
+
+  @media (max-width: 720px) {
+    body { padding: 32px 20px; font-size: 15px; }
+    .letterhead-tc { font-size: 26px; }
+    .part-title-en { font-size: 26px; }
+    .blank { min-width: 100px !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- DOCUMENT NAVIGATION -->
+  <div class="doc-nav">
+    <div class="doc-nav-title">⌖ Proposal Letter · 提案信</div>
+    <div class="doc-nav-meta">For Water Quality Research Collaboration</div>
+  </div>
+
+  <!-- ===================== PART 1: FORMAL LETTER ===================== -->
+
+  <!-- LETTERHEAD -->
+  <header class="letterhead">
+    <div class="letterhead-tc">來此淨國際志工團</div>
+    <div class="letterhead-en">LET'S DO IT! TAIWAN</div>
+    <div class="letterhead-tag">Member of Let's Do It World ◇ World Cleanup Day · UN International Day</div>
+  </header>
+
+  <!-- DATE -->
+  <div class="meta-line">
+    發文日期:中華民國 <span class="blank short"></span> 年 <span class="blank short"></span> 月 <span class="blank short"></span> 日
+  </div>
+
+  <!-- ADDRESSEE -->
+  <div class="addressee-block">
+    <div class="addressee-line">
+      受文者:<strong style="color:var(--parchment)"><span class="blank long"></span> 教授/老師 鈞鑒</strong>
+    </div>
+    <div class="addressee-line" style="color:var(--ink-dim)">
+      (機構/系所:<span class="blank long"></span>)
+    </div>
+  </div>
+
+  <!-- SUBJECT -->
+  <div class="subject-line">
+    <strong>主旨:</strong>邀請就台灣水質檢測與公民科學合作交換意見,敬請  賜覆。
+  </div>
+
+  <!-- SECTION 1: BACKGROUND -->
+  <section class="section">
+    <div class="section-num">SECTION ONE</div>
+    <h2 class="section-title"><span class="section-title-tc">一、組織背景</span></h2>
+    <div class="section-body">
+      <p>「來此淨國際志工團」(LET'S DO IT! Taiwan)為內政部立案之社團法人,源自 2008 年愛沙尼亞的全球公民運動 Let's Do It! World。當年,愛沙尼亞五萬人(占全國 4% 人口)在五小時內清理整個國家的非法垃圾,此舉開啟了全球史上最大規模的公民環境運動。</p>
+      <p>自此,該運動推展至全球 190 個國家、累計動員超過 1.39 億人次。其發起的世界清潔日(World Cleanup Day,每年 9 月 20 日)已於 2024 年正式列入聯合國國際日。本團體自 2016 年獲得授權設立、2018 年正式向內政部立案,作為 Let's Do It! World 在台灣的合作夥伴。</p>
+      <div class="callout">
+        Let's Do It 的核心理念並非單純的「淨灘」,而是「行為改變」與「公民科學」——透過大規模參與,催化系統性的環境改善。2025 年全球參與人數已達 2,500 萬。
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PURPOSE -->
+  <section class="section">
+    <div class="section-num">SECTION TWO</div>
+    <h2 class="section-title"><span class="section-title-tc">二、來信目的</span></h2>
+    <div class="section-body">
+      <p>本團體正在推動「公民科學」與「水質檢測」的整合計畫,希望就以下幾項合作可能性與 教授/老師交換意見,內容涵蓋環境工程、海洋污染、新興污染物等領域。</p>
+      <p>本團體掌握全台志工網絡與多年累積的淨灘監測數據,學界擁有專業分析能量與政策影響力——雙方在資源、方法、目標上有明確的互補空間。此次來函希望直接與您討論可行的合作形式,並了解彼此資源與目標的對接點。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: BACKGROUND ISSUES -->
+  <section class="section">
+    <div class="section-num">SECTION THREE</div>
+    <h2 class="section-title"><span class="section-title-tc">三、議題背景</span></h2>
+    <div class="section-body">
+      <p>根據環境部、內政部與相關研究機構之公開資料,台灣目前面臨數項關鍵水質與環境議題,而其中許多項目正是公民科學可發揮重要補位作用之領域:</p>
+
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">01</span>家戶接管率與整體污水處理率落差</div>
+        <div class="num-item-body">2025 年第三季公共污水下水道整體處理率為 70.15%,然實際公共下水道用戶接管普及率推估僅約 45%;此一落差顯示,大量「處理」實為分散式化糞池,並未真正集中處理,對河川與沿海水體仍構成負荷。</div>
+      </div>
+
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">02</span>新興污染物 PFAS 之管制與監測</div>
+        <div class="num-item-body">環境部已於 2024 年訂定飲用水 PFAS 標準(PFOA+PFOS≦50 ng/L、PFOS+PFHxS≦70 ng/L),並將於 2027 年 7 月全面實施;然此標準較美國 EPA 之 4 ng/L 寬鬆 6 倍以上。台灣亟需更廣泛的環境 PFAS 分布調查。</div>
+      </div>
+
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">03</span>氨氮排放與優養化前驅物質</div>
+        <div class="num-item-body">目前環保署放流水標準中,生活污水之氨氮管制仍寬鬆;氨氮促進藻類生長、消耗水中溶氧,為沿海優養化之關鍵前驅物質,亟需建立長期監測網絡。</div>
+      </div>
+
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">04</span>AI 資料中心興起之新挑戰</div>
+        <div class="num-item-body">鴻海與輝達於高雄合建 100 MW AI 中心,半導體業已佔全國用電 15%。AI 資料中心對水資源與廢熱排放之影響將是 2026 年後關鍵議題。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: WHAT WE OFFER -->
+  <section class="section">
+    <div class="section-num">SECTION FOUR</div>
+    <h2 class="section-title"><span class="section-title-tc">四、本團體可提供之資源</span></h2>
+    <div class="section-body">
+      <p>本團體主導的「<strong>淨灘 2.0 — 水域生物探索平台</strong>」於 2026 年從全球 211 個世界清潔日參與國中,獲選為 <strong>22 個最具代表性行動故事之一</strong>,將於 2026 年 4 月在 <strong>歐洲議會(布魯塞爾)</strong> 展出。該平台是一個<em style="color:var(--pacific); font-style:normal; font-weight:600">開放架構的多機構科學網絡</em>——不同學術機構依各自專長擔任不同角色,既有夥伴包括:</p>
+
+      <div style="background: rgba(232, 162, 104, 0.05); border: 1px solid var(--rule); padding: 18px 22px; margin: 14px 0 18px; border-left: 3px solid var(--pacific);">
+        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--pacific); text-transform: uppercase; margin-bottom: 10px; font-weight: 600;">⌖ 既有的科學夥伴架構</div>
+        <ul class="list" style="margin: 0;">
+          <li><strong>TCRS 台灣珊瑚礁學會</strong>(湯森林博士主導)— 提供「<strong>珊瑚全共生體 Coral Holobiont</strong>」研究框架,定義何謂「守護看不見的微生態」</li>
+          <li><strong>國立海洋大學海洋生物研究所</strong> — 提供 <strong>NGS 次世代定序</strong> 分析能量,將 eDNA 樣本轉化為珊瑚微生物健康指標</li>
+          <li><strong>Let's Do It Taiwan</strong> — 主導 Enode 公民科學家培訓、田野規模化、與 World Cleanup Day 全球網絡對接</li>
+        </ul>
+      </div>
+
+      <p>平台的設計就是<strong>可持續擴展</strong>。新加入的學術機構並非與既有夥伴重疊或競爭,而是依研究專長扮演<em style="color:var(--pacific); font-style:normal; font-weight:600">新的角色</em>——例如:特定區域的監測網絡、特定污染物的分析、或特定方法學的貢獻。本次來函,即希望與 教授/老師討論可能的角色定位。</p>
+      <p>作為公民科學的執行夥伴,本團體可協助學界補位四項傳統研究較難達成的工作:</p>
+      <ul class="list">
+        <li><strong>時空覆蓋率:</strong>透過 Enode 公民科學家培訓制度與全台志工網絡(含高雄、台中、新北、桃園、宜花東等在地團隊),可進行高頻次、多地點的長期採樣,補足學界因人力時間限制難以執行的監測缺口。</li>
+        <li><strong>多元觀測場域:</strong>淨灘 2.0 涵蓋海岸生態區、河流與湖泊出海口、都市型河流(基隆河、愛河)、海洋保護區四大類型,可彈性對接不同研究領域。</li>
+        <li><strong>國際資料串連:</strong>透過 Let's Do It World 全球網絡與 World Cleanup Day 資料庫,本團體之數據可與 211 國數據對接;歐洲議會展示亦為國際能見度的具體實證。</li>
+        <li><strong>媒體與政策影響力:</strong>本團體於每年 9 月 20 日世界清潔日享有顯著媒體曝光;與環境部、海洋保育署、各縣市環保局均有對話管道,可協助將研究成果轉化為政策倡議。</li>
+        <li><strong>企業 ESG 資金導入潛力:</strong>本團體與多家科技業 ESG 部門有合作經驗,可協助設計企業贊助之長期監測計畫,為實驗室爭取額外資源。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 5: COLLABORATION MODELS -->
+  <section class="section">
+    <div class="section-num">SECTION FIVE</div>
+    <h2 class="section-title"><span class="section-title-tc">五、可能的合作模式(由淺入深)</span></h2>
+    <div class="section-body">
+      <p>以下幾種合作層次,從一次性的演講到長期的 MOU 結盟,可依雙方資源與興趣選擇切入點:</p>
+
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">一</span>學術講座或內訓</div>
+        <div class="num-item-body">邀請至本團體年會、志工培訓或公開講座分享研究成果,屬一次性、低承諾的合作。</div>
+      </div>
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">二</span>加入淨灘 2.0 科學網絡</div>
+        <div class="num-item-body">作為平台新的科學夥伴。Enode 公民科學家負責田野採樣與基礎觀察,<strong>貴系所/研究室提供自身專長之分析或方法</strong>(無須與既有夥伴重疊)。可選擇切入點:(一) 特定區域監測(例如:南台灣海岸 / 中部河川 / 北部河口);(二) 特定污染物分析(例如:PFAS / 微塑膠 / 重金屬 / 抗生素);(三) 特定方法學貢獻(例如:LC-MS / 生態毒理 / 沉積物地化)。</div>
+      </div>
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">三</span>共同發表論文</div>
+        <div class="num-item-body">將累積的公民科學數據,經學術轉化後共同投稿國際期刊;本團體可協助提供數據庫與田野資源。</div>
+      </div>
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">四</span>學術委員或顧問</div>
+        <div class="num-item-body">邀請擔任本團體學術委員會成員,定期諮詢、年度檢視研究方向。</div>
+      </div>
+      <div class="num-item">
+        <div class="num-item-head"><span class="num">五</span>正式 MOU 結盟</div>
+        <div class="num-item-body">與貴系所/中心簽訂合作備忘錄,綁定長期資源與時程,共建公民科學監測站。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: NEXT STEPS -->
+  <section class="section">
+    <div class="section-num">SECTION SIX</div>
+    <h2 class="section-title"><span class="section-title-tc">六、下一步建議</span></h2>
+    <div class="section-body">
+      <p>若上述方向有引起 教授/老師興趣的部分,可在以下方式中擇一進行初步交流:</p>
+      <ul class="list">
+        <li>親自赴貴校系所拜訪(約 30–45 分鐘的對談)</li>
+        <li>視訊會議(Google Meet 或 Microsoft Teams)</li>
+        <li>電子郵件之非正式交流(若 教授/老師時間有限)</li>
+      </ul>
+      <p style="margin-top:20px">歡迎來信回覆,我們將依 教授/老師之研究方向,客製化準備後續討論的議題與資料。</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="closing-italic">期待有機會與您就上述議題深入交流,共同探索合作的可能。</div>
+    <div class="closing-formal">
+      <div>耑此</div>
+      <div>敬頌</div>
+      <div class="indent">研祺</div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="signature">
+    <div class="signature-org">來此淨國際志工團 LET'S DO IT! Taiwan</div>
+    <div class="line"><span class="blank long"></span>(發文人職稱、姓名)</div>
+    <div class="line">聯絡電話:<span class="blank long"></span></div>
+    <div class="line">電子郵件:<span class="blank long"></span></div>
+    <div class="line">通訊地址:<span class="blank long"></span></div>
+  </div>
+
+  <!-- ATTACHMENTS -->
+  <div class="attachments">
+    <div class="attachments-title">⌖ 隨函附件(視情況提供)</div>
+    <ul class="list">
+      <li>Let's Do It Taiwan 組織簡介(英文版可供國際背景之研究者參考)</li>
+      <li>近三年淨灘活動數據摘要與媒體報導</li>
+      <li>「波羅的海 vs 太平洋」議題分析報告(系列共 6 份視覺報告)</li>
+      <li>World Cleanup Day 2025 全球成果報告連結</li>
+    </ul>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- ===================== PART 2: EMAIL VERSION ===================== -->
+
+  <div class="part-header">
+    <div class="part-num">PART TWO</div>
+    <h2 class="part-title-en">Email <em>Short Version</em></h2>
+    <div class="part-title-tc">附:電子郵件版本(簡短版)</div>
+    <div class="part-desc">
+      For initial contact — copy this into your email client, then send the full proposal as an attachment.
+      <span class="part-desc-tc">作為「初次接觸」之電子郵件內容,可直接複製、修改後寄出。完整提案信則可作為附件或於回信中提供。</span>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">⌖ Email Template</div>
+    <div class="email-subject">
+      <strong>主旨:</strong>【來此淨國際志工團】關於水質檢測公民科學合作之初步洽談
+    </div>
+    <div class="email-body">
+      <p><span class="blank short"></span> 教授/老師 您好:</p>
+      <p>我是「來此淨國際志工團」(Let's Do It Taiwan)的<span class="blank short"></span>(職稱姓名)。本團體為內政部立案之社團法人,源自愛沙尼亞、現於 211 國推展的全球公民環境運動 Let's Do It! World 之台灣合作夥伴;每年 9 月 20 日的世界清潔日(World Cleanup Day)自 2024 年起列入聯合國國際日。</p>
+      <p>本團體主導的「<strong>淨灘 2.0 — 水域生物探索平台</strong>」於 2026 年從全球 211 個 WCD 參與國中,獲選為 <strong>22 個最具代表性行動故事之一</strong>,將於 2026 年 4 月在歐洲議會(布魯塞爾)展出。該平台是一個開放架構的多機構科學網絡,既有夥伴包括 TCRS 台灣珊瑚礁學會(湯森林博士提供珊瑚全共生體研究框架)、海洋大學海生所(提供 NGS 次世代定序),本團體主導田野規模化與 Enode 公民科學家培訓。</p>
+      <p>注意到 教授/老師長期投入<span class="blank short"></span>(具體研究領域,例如:海洋污染物監測/PFAS 飲用水標準/廢水生物處理/沉積物化學/塑膠微粒分析)研究,希望邀請貴系所/研究室<strong>就特定區域、特定污染物、或特定方法學擔任平台中的新角色</strong>——不與既有夥伴重疊,而是補位網絡尚未涵蓋的維度。</p>
+      <p>若此議題有引起您興趣的部分,希望安排約 30 分鐘的初步交流——可採電話、視訊或赴貴系所拜訪皆可。隨信附上更完整之提案文件,提供您參考。</p>
+      <p>期盼收到您的回覆。</p>
+      <p style="margin-top:18px">敬祝</p>
+      <p style="padding-left:36px">教安</p>
+
+      <div class="email-signature">
+        <div class="name"><span class="blank short"></span>(姓名)敬上</div>
+        <div>來此淨國際志工團 Let's Do It Taiwan</div>
+        <div>(職稱)</div>
+        <div>電話:<span class="blank short"></span> │ 信箱:<span class="blank short"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- ===================== PART 3: TIPS ===================== -->
+
+  <div class="part-header">
+    <div class="part-num">PART THREE</div>
+    <h2 class="part-title-en">Sending <em>Notes</em></h2>
+    <div class="part-title-tc">附錄:寄送提案信的注意事項</div>
+    <div class="part-desc">
+      Practical advice on how to time, customize, and follow up on cold-outreach to academics.
+      <span class="part-desc-tc">關於時機、客製化與後續追蹤的實務建議。</span>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-title">▎為什麼要分兩個版本?</div>
+    <div class="tip-card-body">
+      <p>學者收到的信件多,初次接觸宜短而具體,讓對方在 30 秒內理解「你是誰、為何寫信、希望什麼」。完整提案信則作為附件,讓有興趣的人深入閱讀。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-title">▎寄送前的客製化檢查清單</div>
+    <div class="tip-card-body">
+      <ul class="checklist">
+        <li><strong>個人化問候</strong> — 在電子郵件版本第 3 段填入該學者的具體研究領域(查 ResearchGate、Google Scholar 或系所網站)</li>
+        <li><strong>顯示誠意</strong> — 提及一篇對方近期的論文或公開演講,簡短一句即可</li>
+        <li><strong>寄出時機</strong> — 平日上午 9–11 點開信率最高;避免週一上午與週五下午</li>
+        <li><strong>標題不要太長</strong> — 控制在 30 字內,且開頭加上【來此淨國際志工團】方便對方識別</li>
+        <li><strong>附件不超過 2 個</strong> — 正式提案信(本文件)+ 一份視覺化報告(如 baltic_pacific_visuals_v2.pdf)</li>
+        <li><strong>若一週未回</strong> — 可禮貌性追問一次,再無回應則暫停</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-title">▎如何追蹤聯絡進度</div>
+    <div class="tip-card-body">
+      <p>建議建立一份簡單試算表(可參考隨附之學者名單文件),欄位包括:學者姓名、機構、首次寄信日、回信狀態、後續行動、備註。每兩週檢視一次,維持節奏。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-title">▎常見的「軟拒絕」回應與應對</div>
+    <div class="tip-card-body">
+      <ul class="list">
+        <li><strong>「我很忙,暫時沒時間」</strong> → 表示理解,詢問是否方便引薦研究室之博士後或博士生</li>
+        <li><strong>「議題不在我目前研究範圍」</strong> → 詢問是否認識同領域同事,或保持聯繫待未來機會</li>
+        <li><strong>「需要先看更多資料」</strong> → 立刻寄出補充資料,並提議下一次接觸的具體時間</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FINAL QUOTE -->
+  <div class="final-quote">
+    <div class="final-quote-text">「Let's Do It! 不是一個環保運動。我們是在改變人的行為。」</div>
+    <div class="final-quote-attr">— Rainer Nõlvak, Let's Do It! 共同創辦人</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    Let's Do It Taiwan · 來此淨國際志工團 · Companion to Scholar Directory · 2026
+  </footer>
+
+</div>
+</body>
+</html>

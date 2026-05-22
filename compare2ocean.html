@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>波羅的海 vs 泛太平洋 — 海洋問題視覺比較</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c1a26;
+    --bg-elevated: #122435;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --baltic-deep: #3d6b94;
+    --baltic-glow: rgba(107, 155, 209, 0.15);
+    --pacific: #e8a268;
+    --pacific-deep: #b87440;
+    --pacific-glow: rgba(232, 162, 104, 0.15);
+    --rule: rgba(212, 201, 168, 0.15);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    padding: 60px 40px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(107, 155, 209, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(232, 162, 104, 0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* HEADER */
+  .doc-header {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 0;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .doc-title {
+    font-family: var(--serif-tc);
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--parchment);
+  }
+  .doc-title em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--baltic);
+    font-weight: 300;
+  }
+  .doc-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-align: right;
+  }
+  .doc-meta div { margin-bottom: 4px; }
+
+  /* SECTION */
+  .figure {
+    margin-bottom: 120px;
+    position: relative;
+  }
+  .fig-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .fig-title {
+    font-family: var(--serif-tc);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.25;
+    color: var(--parchment);
+    margin-bottom: 8px;
+    max-width: 800px;
+  }
+  .fig-subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-dim);
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .legend-swatch {
+    width: 24px;
+    height: 12px;
+    border-radius: 1px;
+  }
+  .legend-swatch.baltic { background: var(--baltic); }
+  .legend-swatch.pacific { background: var(--pacific); }
+  .legend-label {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .legend-label span {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-dim);
+    margin-left: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  /* CHART 1 - BAR COMPARISON */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .bar-label {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .bar-label small {
+    display: block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--ink-dim);
+    margin-top: 2px;
+  }
+  .bar-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bar-track {
+    position: relative;
+    height: 22px;
+    background: rgba(255,255,255,0.025);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--bg);
+    font-weight: 500;
+    transition: width 0.6s ease;
+  }
+  .bar-fill.baltic {
+    background: linear-gradient(90deg, var(--baltic-deep), var(--baltic));
+  }
+  .bar-fill.pacific {
+    background: linear-gradient(90deg, var(--pacific-deep), var(--pacific));
+  }
+  .bar-axis {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+  }
+  .axis-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.1em;
+  }
+
+  /* CHART 1 INSIGHT BOX */
+  .insight {
+    margin-top: 36px;
+    padding: 24px 28px;
+    background: var(--bg-elevated);
+    border-left: 2px solid var(--parchment);
+    font-family: var(--serif-tc);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+    font-weight: 300;
+  }
+  .insight strong {
+    font-weight: 500;
+    color: var(--parchment);
+  }
+  .insight .baltic-text { color: var(--baltic); font-weight: 500; }
+  .insight .pacific-text { color: var(--pacific); font-weight: 500; }
+
+  /* CHART 2 - DIFFERENCES SPLIT */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    position: relative;
+  }
+  .diff-grid::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--rule);
+  }
+  .diff-col {
+    padding: 0 32px;
+  }
+  .diff-col:first-child { padding-left: 0; }
+  .diff-col:last-child { padding-right: 0; }
+  .diff-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .diff-marker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ink-dim);
+  }
+  .diff-name {
+    font-family: var(--serif-tc);
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .diff-name.baltic { color: var(--baltic); }
+  .diff-name.pacific { color: var(--pacific); }
+  .diff-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-dim);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .diff-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .diff-item {
+    padding-left: 24px;
+    position: relative;
+  }
+  .diff-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 12px;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  .diff-item.baltic::before { background: var(--baltic); }
+  .diff-item.pacific::before { background: var(--pacific); }
+  .diff-item-title {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+  }
+  .diff-item-desc {
+    font-family: var(--serif-tc);
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  .diff-item-desc em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--parchment);
+  }
+
+  /* CHART 3 - CONCLUSION */
+  .conclusion-wrap {
+    position: relative;
+    padding: 60px 0 20px;
+  }
+  .concl-svg-wrap {
+    margin-bottom: 56px;
+  }
+  .concl-svg-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .concl-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin-bottom: 56px;
+  }
+  .concl-side {
+    padding: 32px 28px;
+    background: var(--bg-elevated);
+    border-top: 2px solid;
+    position: relative;
+  }
+  .concl-side.baltic { border-color: var(--baltic); }
+  .concl-side.pacific { border-color: var(--pacific); }
+  .concl-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .concl-tag.baltic { color: var(--baltic); }
+  .concl-tag.pacific { color: var(--pacific); }
+  .concl-quote {
+    font-family: var(--serif-tc);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--parchment);
+    margin-bottom: 16px;
+  }
+  .concl-en {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .concl-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-faint);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+  }
+  .concl-bottom {
+    text-align: center;
+    padding: 48px 24px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .concl-bottom-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--parchment);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .concl-bottom-text {
+    font-family: var(--serif-tc);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 760px;
+    margin: 0 auto 12px;
+  }
+  .concl-bottom-text em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--pacific);
+    font-weight: 400;
+  }
+  .concl-bottom-en {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-dim);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 760px) {
+    body { padding: 32px 20px; }
+    .doc-title { font-size: 28px; }
+    .doc-meta { text-align: left; }
+    .fig-title { font-size: 24px; }
+    .bar-row, .bar-axis { grid-template-columns: 1fr; gap: 8px; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .diff-grid::before { display: none; }
+    .diff-col { padding: 0; margin-bottom: 32px; }
+    .concl-grid { grid-template-columns: 1fr; }
+    .concl-divider { padding: 16px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- DOCUMENT HEADER -->
+  <header class="doc-header">
+    <h1 class="doc-title">波羅的海 <em>vs.</em> 泛太平洋<br>海洋問題視覺比較</h1>
+    <div class="doc-meta">
+      <div>Visual Report · 2026</div>
+      <div>Sources: HELCOM · UNEP · WHO · PMC</div>
+      <div>3 Figures</div>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- VISUAL 1 — SHARED PROBLEMS SEVERITY -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 01 — Shared Problems · Severity Comparison</div>
+    <h2 class="fig-title">同樣的病,不同的劑量</h2>
+    <p class="fig-subtitle">兩個海域共同面臨的八項環境壓力,但每項問題在各自海域的「嚴重程度」差異顯著。</p>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-swatch baltic"></div>
+        <div class="legend-label">波羅的海 <span>BALTIC</span></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch pacific"></div>
+        <div class="legend-label">泛太平洋 <span>PACIFIC</span></div>
+      </div>
+    </div>
+
+    <div class="bar-chart">
+
+      <div class="bar-row">
+        <div class="bar-label">優養化 / 營養鹽污染<small>Eutrophication</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 95%;">95</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 55%;">55</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">有害化學物質<small>Hazardous chemicals · PFAS · 重金屬</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 90%;">90</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 70%;">70</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">塑膠與微塑膠污染<small>Plastic & microplastics</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 65%;">65</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 95%;">95</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">氣候變遷與海溫上升<small>Climate change & warming</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 75%;">75</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 92%;">92</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">過度捕撈<small>Overfishing</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 80%;">80</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 85%;">85</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">棲地破壞<small>Habitat destruction</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 70%;">70</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 80%;">80</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">外來入侵物種<small>Invasive species</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 65%;">65</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 75%;">75</div></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">水下噪音<small>Underwater noise</small></div>
+        <div class="bar-pair">
+          <div class="bar-track"><div class="bar-fill baltic" style="width: 55%;">55</div></div>
+          <div class="bar-track"><div class="bar-fill pacific" style="width: 60%;">60</div></div>
+        </div>
+      </div>
+
+      <div class="bar-axis">
+        <div></div>
+        <div class="axis-ticks">
+          <span>0</span><span>25</span><span>50</span><span>75</span><span>100 — 嚴重程度指數</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <strong>關鍵觀察:</strong> 同樣的問題清單,劑量配方完全不同。<span class="baltic-text">波羅的海</span>的最尖銳問題是 <strong>優養化</strong> 與 <strong>有害化學物質</strong>——封閉淺海的長期累積。<span class="pacific-text">泛太平洋</span>則由 <strong>塑膠污染</strong> 與 <strong>氣候變遷</strong> 主導——開放系統承載全球壓力。
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- VISUAL 2 — UNIQUE PROBLEMS -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 02 — Unique Threats · Side by Side</div>
+    <h2 class="fig-title">各自獨有的傷口</h2>
+    <p class="fig-subtitle">超越「共享問題」之外,兩個海域各自承載著對方沒有的、結構性與歷史性的獨特威脅。</p>
+
+    <div class="diff-grid">
+
+      <!-- BALTIC COLUMN -->
+      <div class="diff-col">
+        <div class="diff-header">
+          <span class="diff-marker">[ 01 ]</span>
+          <span class="diff-name baltic">波羅的海獨有</span>
+        </div>
+        <p class="diff-tagline">A nearly-sealed brackish sea, scarred by 20th-century industry &amp; war.</p>
+        <ul class="diff-list">
+          <li class="diff-item baltic">
+            <div class="diff-item-title">二戰彈藥與化學武器棄置場</div>
+            <div class="diff-item-desc">海底沉睡著大量芥子毒氣、神經毒劑與軍火,正隨金屬腐蝕緩慢洩漏。<em>Munitions dump sites.</em></div>
+          </li>
+          <li class="diff-item baltic">
+            <div class="diff-item-title">全球最大規模的海底死區</div>
+            <div class="diff-item-desc">深層水體缺氧、硫化氫累積,面積長期擴大,海床近乎無氧。<em>Anoxic dead zones.</em></div>
+          </li>
+          <li class="diff-item baltic">
+            <div class="diff-item-title">半鹹水生態系的脆弱性</div>
+            <div class="diff-item-desc">brackish water 介於海水與淡水之間,物種少而高度特化,任何擾動都難以恢復。</div>
+          </li>
+          <li class="diff-item baltic">
+            <div class="diff-item-title">水體交換週期長達 30 年以上</div>
+            <div class="diff-item-desc">與北海僅靠丹麥海峽相連,污染進入後幾乎被「囚禁」,沒有稀釋的出口。</div>
+          </li>
+          <li class="diff-item baltic">
+            <div class="diff-item-title">高度工業化流域的密集排放</div>
+            <div class="diff-item-desc">九個沿岸國加上俄羅斯、白俄羅斯等流域國,農業逕流與工業廢水持續注入。</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PACIFIC COLUMN -->
+      <div class="diff-col">
+        <div class="diff-header">
+          <span class="diff-marker">[ 02 ]</span>
+          <span class="diff-name pacific">泛太平洋獨有</span>
+        </div>
+        <p class="diff-tagline">An open planetary ocean, where global imbalance lands hardest on the smallest.</p>
+        <ul class="diff-list">
+          <li class="diff-item pacific">
+            <div class="diff-item-title">海平面上升的存亡威脅</div>
+            <div class="diff-item-desc">吐瓦魯、吉里巴斯、馬紹爾群島等低海拔島國面臨整國消失的可能。<em>Existential sea-level rise.</em></div>
+          </li>
+          <li class="diff-item pacific">
+            <div class="diff-item-title">珊瑚白化與礁體崩塌</div>
+            <div class="diff-item-desc">大堡礁等熱帶珊瑚礁因海溫上升大規模白化,連帶摧毀漁業與文化生計。</div>
+          </li>
+          <li class="diff-item pacific">
+            <div class="diff-item-title">太平洋大垃圾帶</div>
+            <div class="diff-item-desc">介於加州與夏威夷之間,面積約德州大小的塑膠漩渦,微塑膠擴散至最深海溝。<em>Great Pacific Garbage Patch.</em></div>
+          </li>
+          <li class="diff-item pacific">
+            <div class="diff-item-title">深海採礦的新興爭議</div>
+            <div class="diff-item-desc">商業利益與未知生態的對峙,可能在我們了解深海之前就已破壞它。<em>Deep-sea mining.</em></div>
+          </li>
+          <li class="diff-item pacific">
+            <div class="diff-item-title">氣候正義與環境殖民</div>
+            <div class="diff-item-desc">島國向聯合國要求工業大國賠償——排碳最少的人,卻承擔最沉的後果。<em>Climate justice asymmetry.</em></div>
+          </li>
+          <li class="diff-item pacific">
+            <div class="diff-item-title">海洋酸化</div>
+            <div class="diff-item-desc">大氣 CO₂ 溶入廣袤海面,降低 pH,直接威脅有殼海洋生物與整條食物鏈。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- VISUAL 3 — CONCLUSION -->
+  <!-- ============================================ -->
+  <section class="figure">
+    <div class="fig-label">Figure 03 — Synthesis · Two Metaphors, One Wound</div>
+    <h2 class="fig-title">兩種病灶,同一個根</h2>
+    <p class="fig-subtitle">把所有資料壓縮成一句話:兩個海洋是同一個人類世病徵在不同尺度下的展演。</p>
+
+    <div class="concl-svg-wrap">
+      <svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="balticGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#6b9bd1" stop-opacity="0.5"/>
+            <stop offset="60%" stop-color="#3d6b94" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#3d6b94" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="pacificGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8a268" stop-opacity="0.5"/>
+            <stop offset="60%" stop-color="#b87440" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#b87440" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="0.6" fill="#d4c9a8" opacity="0.3"/>
+          </pattern>
+        </defs>
+
+        <!-- BALTIC: small, sealed circle -->
+        <g transform="translate(220, 140)">
+          <circle r="95" fill="url(#balticGrad)"/>
+          <circle r="70" fill="none" stroke="#6b9bd1" stroke-width="1" stroke-dasharray="2 3" opacity="0.8"/>
+          <circle r="50" fill="none" stroke="#6b9bd1" stroke-width="0.8" opacity="0.5"/>
+          <circle r="32" fill="#3d6b94" opacity="0.4"/>
+          <!-- sealed indicator -->
+          <path d="M -85 -60 L -85 60 M 85 -60 L 85 60" stroke="#6b9bd1" stroke-width="1.5" opacity="0.7"/>
+          <text y="-115" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" fill="#6b9bd1">BALTIC</text>
+          <text y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="13" fill="#8a9ba8">sealed · slow · accumulating</text>
+        </g>
+
+        <!-- PACIFIC: large, expansive circle -->
+        <g transform="translate(720, 140)">
+          <circle r="135" fill="url(#pacificGrad)"/>
+          <circle r="110" fill="url(#dots)" opacity="0.4"/>
+          <circle r="80" fill="none" stroke="#e8a268" stroke-width="0.6" opacity="0.4"/>
+          <circle r="50" fill="none" stroke="#e8a268" stroke-width="0.5" opacity="0.3"/>
+          <!-- ripple lines outward -->
+          <g stroke="#e8a268" stroke-width="0.8" fill="none" opacity="0.5">
+            <path d="M -150 0 L -135 0"/>
+            <path d="M 135 0 L 150 0"/>
+            <path d="M 0 -150 L 0 -135"/>
+            <path d="M 0 135 L 0 150"/>
+            <path d="M -106 -106 L -96 -96"/>
+            <path d="M 106 -106 L 96 -96"/>
+            <path d="M -106 106 L -96 96"/>
+            <path d="M 106 106 L 96 96"/>
+          </g>
+          <text y="-155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" fill="#e8a268">PACIFIC</text>
+          <text y="165" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="13" fill="#8a9ba8">open · vast · receiving</text>
+        </g>
+
+        <!-- Connecting line / shared root -->
+        <line x1="320" y1="140" x2="580" y2="140" stroke="#d4c9a8" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.6"/>
+        <text x="450" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2" fill="#d4c9a8" opacity="0.8">SAME ROOT</text>
+        <text x="450" y="150" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="11" fill="#8a9ba8">Anthropocene</text>
+      </svg>
+    </div>
+
+    <div class="concl-grid">
+      <div class="concl-side baltic">
+        <div class="concl-tag baltic">◐ BALTIC SEA</div>
+        <div class="concl-quote">封閉容器中的<br>慢性中毒</div>
+        <div class="concl-en">A sealed container, slowly poisoning itself. The mirror of European industrial civilization.</div>
+      </div>
+
+      <div class="concl-divider">vs.</div>
+
+      <div class="concl-side pacific">
+        <div class="concl-tag pacific">◑ PACIFIC OCEAN</div>
+        <div class="concl-quote">開放系統中的<br>全球失衡</div>
+        <div class="concl-en">An open planetary system, bearing the weight of global inequality.</div>
+      </div>
+    </div>
+
+    <div class="concl-bottom">
+      <div class="concl-bottom-tag">⌖ Shared Root · 共同根源</div>
+      <div class="concl-bottom-text">兩個海洋承載著同樣的「<em>人類世病徵</em>」——只是在不同的容器裡,以不同的速度,訴說同一個故事。</div>
+      <div class="concl-bottom-en">Two oceans, one Anthropocene wound — told at different scales, in different tongues.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Data · HELCOM HOLAS 3 (2023) · BSR Policy Briefing 7/2023 · UNEP-SPREP · WHO Western Pacific</span>
+    <span>Severity index synthesized from literature review</span>
+  </footer>
+
+</div>
+</body>
+</html>

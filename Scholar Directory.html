@@ -1,0 +1,1460 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水質檢測學者合作名單 — Scholar Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elevated: #122435;
+    --bg-card: #0f1e2c;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --baltic-deep: #3d6b94;
+    --pacific: #e8a268;
+    --pacific-deep: #b87440;
+    --warning: #d97757;
+    --green: #7fb069;
+    --rule: rgba(212, 201, 168, 0.15);
+    --rule-strong: rgba(212, 201, 168, 0.3);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    padding: 50px 32px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(232, 162, 104, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(107, 155, 209, 0.04) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+
+  /* HEADER */
+  .doc-header {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 36px 0;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .doc-title-en {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--parchment);
+    margin-bottom: 8px;
+  }
+  .doc-title-en em {
+    font-style: italic;
+    color: var(--pacific);
+    font-weight: 300;
+  }
+  .doc-title-tc {
+    font-family: var(--serif-tc);
+    font-size: 17px;
+    color: var(--ink-dim);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+  .doc-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-align: right;
+  }
+  .doc-meta div { margin-bottom: 4px; }
+
+  /* INTRO */
+  .intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    font-weight: 300;
+    max-width: 900px;
+    margin-bottom: 50px;
+    padding-left: 18px;
+    border-left: 2px solid var(--pacific);
+  }
+  .intro-tc {
+    font-family: var(--serif-tc);
+    display: block;
+    font-style: normal;
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    margin-top: 8px;
+    line-height: 1.7;
+  }
+
+  /* HOW TO USE BLOCK */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  .usage-block {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 24px 26px;
+    border-top: 2px solid var(--pacific);
+  }
+  .usage-block-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--pacific);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .usage-block h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--parchment);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .priority-key {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .priority-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .priority-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    min-width: 76px;
+    text-align: center;
+  }
+  .priority-badge.a { background: rgba(217, 119, 87, 0.2); color: var(--warning); border: 1px solid var(--warning); }
+  .priority-badge.b { background: rgba(232, 162, 104, 0.15); color: var(--pacific); border: 1px solid var(--pacific); }
+  .priority-badge.c { background: rgba(107, 155, 209, 0.15); color: var(--baltic); border: 1px solid var(--baltic); }
+  .priority-desc {
+    color: var(--ink-dim);
+    flex: 1;
+  }
+  .priority-desc strong { color: var(--parchment); }
+
+  ul.usage-list {
+    list-style: none;
+  }
+  ul.usage-list li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-dim);
+    border-bottom: 1px dotted var(--rule);
+  }
+  ul.usage-list li:last-child { border-bottom: none; }
+  ul.usage-list li::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--pacific);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  ul.usage-list li.warn { color: var(--warning); }
+  ul.usage-list li.warn::before { content: '⚠'; }
+  ul.usage-list li strong { color: var(--parchment); }
+
+  /* SECTION HEADER */
+  .section-header {
+    margin: 70px 0 24px;
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title-en {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.1;
+    color: var(--parchment);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .section-title-en em { font-style: italic; color: var(--baltic); font-weight: 300; }
+  .section-title-tc {
+    font-family: var(--serif-tc);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--ink-dim);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+  }
+  .section-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15.5px;
+    color: var(--ink-dim);
+    line-height: 1.55;
+    margin-bottom: 28px;
+    max-width: 900px;
+  }
+  .section-desc-tc {
+    font-family: var(--serif-tc);
+    font-style: normal;
+    display: block;
+    margin-top: 4px;
+    font-size: 13.5px;
+  }
+
+  /* SCHOLAR TABLE */
+  .scholar-table {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .scholar-row {
+    display: grid;
+    grid-template-columns: 200px 220px 1.6fr 1.2fr 160px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .scholar-row:last-child { border-bottom: none; }
+  .scholar-row.header {
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .scholar-row.divider {
+    grid-template-columns: 1fr;
+    background: rgba(232, 162, 104, 0.07);
+  }
+  .scholar-row.divider .scholar-cell {
+    padding: 14px 20px;
+    border-right: none;
+  }
+  .scholar-row.divider .scholar-cell strong {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--parchment);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .scholar-cell {
+    padding: 16px 18px;
+    border-right: 1px solid var(--rule);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .scholar-cell:last-child { border-right: none; }
+
+  .scholar-row.header .scholar-cell {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    color: var(--parchment);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 14px 18px;
+  }
+
+  .inst-name {
+    font-family: var(--sans);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .inst-dept {
+    font-family: var(--serif-tc);
+    color: var(--ink-dim);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .person-name {
+    font-family: var(--sans);
+    font-weight: 600;
+    color: var(--parchment);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .person-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+
+  .expertise-main {
+    font-family: var(--serif-tc);
+    color: var(--ink);
+    margin-bottom: 8px;
+    font-size: 13.5px;
+  }
+  .expertise-tags {
+    list-style: none;
+  }
+  .expertise-tags li {
+    padding-left: 14px;
+    position: relative;
+    font-family: var(--serif-tc);
+    color: var(--ink-dim);
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-bottom: 3px;
+  }
+  .expertise-tags li::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    color: var(--pacific);
+  }
+
+  .contact-line {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--pacific);
+    margin-bottom: 4px;
+    font-weight: 500;
+    word-break: break-all;
+  }
+  .contact-tel {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-dim);
+  }
+
+  .priority-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .priority-note {
+    font-family: var(--serif-tc);
+    font-size: 12px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+  .priority-note.highlight {
+    color: var(--green);
+    font-style: italic;
+  }
+
+  /* TRACKING TABLE */
+  .tracking-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    margin-bottom: 28px;
+    overflow-x: auto;
+  }
+  table.tracking {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 13px;
+  }
+  table.tracking th {
+    background: var(--bg-elevated);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    color: var(--parchment);
+    text-transform: uppercase;
+    padding: 12px 14px;
+    border: 1px solid var(--rule);
+    text-align: left;
+    font-weight: 600;
+  }
+  table.tracking td {
+    padding: 14px 14px;
+    border: 1px solid var(--rule);
+    height: 38px;
+    vertical-align: top;
+    color: var(--ink-dim);
+  }
+
+  .status-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    margin-bottom: 24px;
+    font-family: var(--sans);
+    font-size: 12.5px;
+  }
+  .status-key-item {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .status-key-item .icon {
+    font-weight: 700;
+    font-family: var(--mono);
+  }
+  .icon.green { color: var(--green); }
+  .icon.pacific { color: var(--pacific); }
+  .icon.baltic { color: var(--baltic); }
+  .icon.warning { color: var(--warning); }
+  .icon.dim { color: var(--ink-faint); }
+
+  /* STRATEGY SECTION */
+  .strategy-block {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 28px 30px;
+    margin-bottom: 22px;
+    border-left: 3px solid var(--pacific);
+  }
+  .strategy-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--parchment);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .strategy-month {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pacific);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .strategy-desc {
+    font-family: var(--serif-tc);
+    color: var(--ink-dim);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  ol.priority-list {
+    list-style: none;
+    counter-reset: priority;
+  }
+  ol.priority-list li {
+    counter-increment: priority;
+    padding: 10px 0 10px 36px;
+    position: relative;
+    font-family: var(--serif-tc);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    border-bottom: 1px dotted var(--rule);
+  }
+  ol.priority-list li:last-child { border-bottom: none; }
+  ol.priority-list li::before {
+    content: counter(priority, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--pacific);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  ol.priority-list li strong {
+    color: var(--parchment);
+    font-weight: 500;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 20px;
+  }
+  .tip-box {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+    font-family: var(--serif-tc);
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .tip-box .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pacific);
+    margin-right: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  /* CLOSING NOTE */
+  .closing-note {
+    margin-top: 60px;
+    padding: 30px 26px;
+    text-align: center;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .closing-italic {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-dim);
+    line-height: 1.65;
+    max-width: 700px;
+    margin: 0 auto 14px;
+  }
+  .closing-sig {
+    font-family: var(--serif-tc);
+    font-weight: 600;
+    color: var(--parchment);
+    letter-spacing: 0.05em;
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; color: #000; padding: 0; background-image: none; }
+    .container { max-width: none; }
+    .doc-title-en, .scholar-row.divider .scholar-cell strong, .section-title-en,
+    .person-name, .inst-name, .strategy-title, .closing-sig { color: #0F2C4A; }
+    .doc-title-en em, .section-num, .scholar-row.header .scholar-cell,
+    .person-name { color: #0F2C4A; }
+    .scholar-table, .strategy-block, .tip-box, .tracking-wrapper, .usage-block, .status-key {
+      background: #FFF; border-color: #CCC;
+    }
+    .scholar-row.divider { background: #F5EFE8; }
+    .scholar-row.header { background: #EAEAEA; }
+    table.tracking th { background: #EAEAEA; color: #0F2C4A; }
+    .scholar-row { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 1100px) {
+    .scholar-row { grid-template-columns: 1fr; }
+    .scholar-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+    .scholar-cell:last-child { border-bottom: none; }
+    .usage-grid, .tips-grid { grid-template-columns: 1fr; }
+    .doc-title-en { font-size: 36px; }
+    .section-title-en { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div>
+      <h1 class="doc-title-en">Scholar <em>Directory</em></h1>
+      <div class="doc-title-tc">水質檢測學者合作名單 — 高雄 ◇ 台中 ◇ 全國 PFAS 專家</div>
+    </div>
+    <div class="doc-meta">
+      <div>Companion to Proposal Letter</div>
+      <div>21 scholars · 3 regions · 3 priority tiers</div>
+      <div>Let's Do It Taiwan · 2026</div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    A curated list of water quality research scholars in Kaohsiung, Taichung, and at the national level — organized by region, priority tier, and collaboration entry point.
+    <span class="intro-tc">本名單為「來此淨國際志工團」整理之水質檢測合作對象備選清單,內容依公開資料整理,並非全部已建立聯繫。使用前請依需求自行查證最新動態。</span>
+  </div>
+
+  <!-- USAGE BLOCK -->
+  <div class="usage-grid">
+    <div class="usage-block">
+      <div class="usage-block-title">⌖ Priority Tiers · 優先順序定義</div>
+      <h3>How to read the badges</h3>
+      <div class="priority-key">
+        <div class="priority-row">
+          <span class="priority-badge a">★★★ A</span>
+          <span class="priority-desc"><strong>最優先接觸</strong> — 研究領域高度契合,且有明確的合作切入點</span>
+        </div>
+        <div class="priority-row">
+          <span class="priority-badge b">★★ B</span>
+          <span class="priority-desc"><strong>次優先</strong> — 領域相關但合作切入點需進一步探討</span>
+        </div>
+        <div class="priority-row">
+          <span class="priority-badge c">★ C</span>
+          <span class="priority-desc"><strong>觀察名單</strong> — 領域邊緣相關,作為長期關注對象</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="usage-block">
+      <div class="usage-block-title">⌖ Outreach Checklist · 接洽前建議</div>
+      <h3>Five rules before sending</h3>
+      <ul class="usage-list">
+        <li data-num="01">先查 Google Scholar 或 ResearchGate,確認對方近 3 年研究方向</li>
+        <li data-num="02">若對方近期有相關論文或公開演講,寄信時提及一句,表達誠意</li>
+        <li data-num="03">正式提案信可作為附檔,電子郵件簡短版用於信件本文</li>
+        <li data-num="04">若該學者隸屬之系所有共同信箱,可先以系所信箱探詢,再轉介至個人</li>
+        <li class="warn"><strong>禁忌</strong> — 不要寄群發信、不要附「給敬愛的教授」模板抬頭、不要要求免費服務</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION I: KAOHSIUNG -->
+  <!-- =============================== -->
+  <div class="section-header">
+    <div class="section-num">SECTION ONE · 高雄</div>
+    <h2 class="section-title-en"><em>Kaohsiung</em> Network</h2>
+    <div class="section-title-tc">南台灣海洋與環境工程網絡</div>
+    <p class="section-desc">
+      Kaohsiung has Taiwan's most complete ocean–environment–marine biology–marine policy research cluster, anchored by the Kaohsiung Music Center (KMC) at the harbor's edge.
+      <span class="section-desc-tc">高雄擁有台灣最完整的「海洋環境—海洋工程—海洋生物—海洋政策」研究網絡,加上高流場館即將成為公民科學的旗艦現場,是合作首選。</span>
+    </p>
+  </div>
+
+  <div class="scholar-table">
+    <!-- HEADER ROW -->
+    <div class="scholar-row header">
+      <div class="scholar-cell">機構 / Institution</div>
+      <div class="scholar-cell">姓名 / Contact</div>
+      <div class="scholar-cell">專長與合作切入點 / Expertise &amp; Entry Points</div>
+      <div class="scholar-cell">聯絡資訊 / Email · Tel</div>
+      <div class="scholar-cell">優先順序 / Priority</div>
+    </div>
+
+    <!-- DIVIDER: 中山大學 -->
+    <div class="scholar-row divider">
+      <div class="scholar-cell"><strong>◐ 國立中山大學 — 海洋校區優勢,直接對接高流場館</strong></div>
+    </div>
+
+    <!-- 中山 海洋環工 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中山大學</div>
+        <div class="inst-dept">海洋環境及工程學系<br>(高雄西子灣)</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+        <div class="person-note">該系出身海洋保育署署長</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">海洋工程、土木工程、環境工程、生態工程</div>
+        <ul class="expertise-tags">
+          <li>可協助海岸監測站設計</li>
+          <li>可結合離岸風電議題</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">maev@mail.nsysu.edu.tw</div>
+        <div class="contact-tel">(系辦,可從此進入)</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">有海保署人脈,可放大政策影響力</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中山 海科 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中山大學</div>
+        <div class="inst-dept">海洋科學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">海洋化學、海洋生物、海洋地質</div>
+        <ul class="expertise-tags">
+          <li>水體 PFAS、微塑膠分析</li>
+          <li>底質分析(沉積物中污染物)</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">ocean@mail.nsysu.edu.tw</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">PFAS 環境分布調查的合適夥伴</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中山 海生科 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中山大學</div>
+        <div class="inst-dept">海洋生物科技暨資源學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">可探詢共學群</div>
+        <div class="person-note">「海洋廢棄物循環經濟」共學群</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">微塑膠、生物降解、污染修復</div>
+        <ul class="expertise-tags">
+          <li>與淨灘行動最深度連動</li>
+          <li>生態毒理研究</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">mbr@mail.nsysu.edu.tw</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">應用導向,適合企業 CSR 對接</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中山 海事所 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中山大學</div>
+        <div class="inst-dept">海洋事務研究所</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">師資為政策與管理學者</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">海洋政策、跨學科研究</div>
+        <ul class="expertise-tags">
+          <li>政策倡議的學術支援</li>
+          <li>公民科學的制度設計</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">gima@mail.nsysu.edu.tw</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">2026 政策窗口的論述基礎</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中山 人資所 葉致微 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中山大學</div>
+        <div class="inst-dept">人力資源管理研究所</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">葉致微 助理教授</div>
+        <div class="person-note">AI 資料中心研究</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">AI 資料中心對台灣影響之研究計畫</div>
+        <ul class="expertise-tags">
+          <li>與「AI 狂熱 × 公民行動」議題完全契合</li>
+          <li>可協助分析資料中心水/電/土地影響</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">可透過中山人資所聯繫</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">跨議題的關鍵連結人物</div>
+          <div class="priority-note highlight">已有相關研究進行中</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVIDER: 高科大 -->
+    <div class="scholar-row divider">
+      <div class="scholar-cell"><strong>◑ 國立高雄科技大學 — 海洋環境工程系,實務與學術結合的最佳選擇</strong></div>
+    </div>
+
+    <!-- 高科大 王樹倫 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立高雄科技大學</div>
+        <div class="inst-dept">海洋環境工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">王樹倫 副教授兼系主任</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">海洋化學、海洋污染監測、海洋生地化循環</div>
+        <ul class="expertise-tags">
+          <li>PFAS 環境分析</li>
+          <li>海洋優養化指標監測</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">slwang@nkust.edu.tw</div>
+        <div class="contact-tel">07-3617141</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">系主任 — 可一次對話啟動系所合作</div>
+          <div class="priority-note highlight">優先接觸對象</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 高科大 林裕程 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立高雄科技大學</div>
+        <div class="inst-dept">海洋環境工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">林裕程 專案助理教授</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">海洋學、沉積物化學、塑膠微粒、海域樣品採集</div>
+        <ul class="expertise-tags">
+          <li>微塑膠監測的核心技術</li>
+          <li>海漂垃圾組成分析</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">yeecheng@nkust.edu.tw</div>
+        <div class="contact-tel">07-3617141 #23761</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">採樣技術夥伴</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 高科大 陳秋妏 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立高雄科技大學</div>
+        <div class="inst-dept">海洋環境工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">陳秋妏 特聘教授</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">港區沉積物、海洋污染防治</div>
+        <ul class="expertise-tags">
+          <li>高雄港多年研究經驗</li>
+          <li>重金屬與有機污染分析</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">07-3617141 (系辦轉接)</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">資深學者,可任顧問</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 高科大 林啟燦 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立高雄科技大學</div>
+        <div class="inst-dept">海洋環境工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">林啟燦 特聘教授</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">環境工程綜合領域</div>
+        <ul class="expertise-tags">
+          <li>廣泛專業可諮詢</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">ctlin@nkust.edu.tw</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 高科大 講座教授 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立高雄科技大學</div>
+        <div class="inst-dept">海洋環境工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">講座教授兼國際學院院長</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">海洋棄置物監測、海洋污染防治、土壤地下水污染、廢水處理、飲用水檢測、塑膠微粒</div>
+        <ul class="expertise-tags">
+          <li>專業涵蓋面最廣</li>
+          <li>適合擔任諮詢顧問</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">07-3617141 #23551</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">可作為學術委員候選人</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION II: TAICHUNG -->
+  <!-- =============================== -->
+  <div class="section-header">
+    <div class="section-num">SECTION TWO · 台中</div>
+    <h2 class="section-title-en"><em>Taichung</em> Network</h2>
+    <div class="section-title-tc">中台灣環工與廢水處理網絡</div>
+    <p class="section-desc">
+      Taichung is the heart of central Taiwan's environmental engineering research — particularly strong in wastewater treatment, emerging contaminants, and drinking water safety.
+      <span class="section-desc-tc">台中是台灣中部最重要的環境工程研究基地,尤其在廢水處理、新興污染物、自來水安全等議題具備深厚實驗能量。</span>
+    </p>
+  </div>
+
+  <div class="scholar-table">
+    <!-- HEADER ROW -->
+    <div class="scholar-row header">
+      <div class="scholar-cell">機構 / Institution</div>
+      <div class="scholar-cell">姓名 / Contact</div>
+      <div class="scholar-cell">專長與合作切入點</div>
+      <div class="scholar-cell">聯絡資訊</div>
+      <div class="scholar-cell">優先順序</div>
+    </div>
+
+    <div class="scholar-row divider">
+      <div class="scholar-cell"><strong>◐ 國立中興大學 — 中部環境工程的核心</strong></div>
+    </div>
+
+    <!-- 中興 環工 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中興大學</div>
+        <div class="inst-dept">環境工程學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+        <div class="person-note">中部最大環工系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">廢水處理、固廢、新興污染物</div>
+        <ul class="expertise-tags">
+          <li>PFAS 等新興污染物分析</li>
+          <li>廢水生物處理升級研究</li>
+          <li>可發起委託研究案</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">enve@nchu.edu.tw</div>
+        <div class="contact-tel">04-2284-0441</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note highlight">優先接觸對象</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中興 化工 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中興大學</div>
+        <div class="inst-dept">化學工程學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">廢水與廢氣生物處理、環境品質模式、自來水水質安全與管理</div>
+        <ul class="expertise-tags">
+          <li>直接對應接管率議題</li>
+          <li>飲用水 PFAS 監測</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">che@nchu.edu.tw</div>
+        <div class="contact-tel">04-22854724</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">自來水安全的最佳對接</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中興 生科 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立中興大學</div>
+        <div class="inst-dept">生命科學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先探詢</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">生態毒理、環境生物</div>
+        <ul class="expertise-tags">
+          <li>PFAS 對水生生物影響</li>
+          <li>生物標誌物開發</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽生科系所辦</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">生態毒理面向的補位</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scholar-row divider">
+      <div class="scholar-cell"><strong>◑ 中部其他環工與環科系所</strong></div>
+    </div>
+
+    <!-- 東海 環工 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">東海大學</div>
+        <div class="inst-dept">環境科學與工程學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">台中私校中環工底子最強</div>
+        <ul class="expertise-tags">
+          <li>實驗室能量充沛</li>
+          <li>學生志工合作可能性高</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽東海環工系所辦</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">可發展長期合作</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 逢甲 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">逢甲大學</div>
+        <div class="inst-dept">環境工程與科學系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">應用導向,實務性強</div>
+        <ul class="expertise-tags">
+          <li>適合企業合作型計畫</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽逢甲環工系所辦</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge c">★ C</span>
+          <div class="priority-note">企業 CSR 計畫優先</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 弘光 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">弘光科技大學</div>
+        <div class="inst-dept">環境與安全衛生工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">系所層級先接洽</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">早年承辦兩岸環保學術研討會</div>
+        <ul class="expertise-tags">
+          <li>實務操作經驗豐富</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽弘光環安系所辦</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge c">★ C</span>
+          <div class="priority-note">長期關注</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION III: NATIONAL EXPERTS -->
+  <!-- =============================== -->
+  <div class="section-header">
+    <div class="section-num">SECTION THREE · 全國級</div>
+    <h2 class="section-title-en"><em>National</em> Experts</h2>
+    <div class="section-title-tc">全國級 PFAS 與新興污染物專家</div>
+    <p class="section-desc">
+      Not located in Kaohsiung or Taichung, but indispensable to any serious PFAS work in Taiwan — even if only as consultants, co-signers, or academic committee members.
+      <span class="section-desc-tc">不在高雄/台中,但是台灣 PFAS 議題最關鍵的研究者。即使無法常駐合作,也建議納入長期諮詢、聯名發聲、學術委員等角色。</span>
+    </p>
+  </div>
+
+  <div class="scholar-table">
+    <div class="scholar-row header">
+      <div class="scholar-cell">機構 / Institution</div>
+      <div class="scholar-cell">姓名 / Contact</div>
+      <div class="scholar-cell">專長與合作切入點</div>
+      <div class="scholar-cell">聯絡資訊</div>
+      <div class="scholar-cell">優先順序</div>
+    </div>
+
+    <div class="scholar-row divider">
+      <div class="scholar-cell"><strong>◯ 學術機構</strong></div>
+    </div>
+
+    <!-- 台大 林郁真 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立台灣大學</div>
+        <div class="inst-dept">環境工程學研究所</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">林郁真 特聘教授</div>
+        <div class="person-note" style="color:var(--warning)">國家級 PFAS 標準制定參與者</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">飲用水 PFAS 標準制定、環境 PFAS 分析</div>
+        <ul class="expertise-tags">
+          <li>台灣 PFAS 領域第一線專家</li>
+          <li>曾協助環境部訂定標準</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽台大環工所</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">最具影響力的 PFAS 學者</div>
+          <div class="priority-note highlight">可作為學術委員首選</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中研院 李承軒 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">中央研究院</div>
+        <div class="inst-dept">環境變遷研究中心</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">李承軒 助研究員</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">PFAS 環境分析、非目標物方法</div>
+        <ul class="expertise-tags">
+          <li>非目標物分析方法開發</li>
+          <li>廢水 PFAS 污染研究</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽中研院環變中心</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">技術面最強的合作對象</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 台大 羅宇軒 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">國立台灣大學</div>
+        <div class="inst-dept">食品安全與健康研究所</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">羅宇軒 助理教授</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">PFAS 暴露評估、食品健康</div>
+        <ul class="expertise-tags">
+          <li>食品中 PFAS 監測</li>
+          <li>人體暴露量計算</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽台大食安所</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">補位食品 PFAS 議題</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中原 江政傑 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">中原大學</div>
+        <div class="inst-dept">環境工程系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">江政傑 助理教授</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">廢水中 PFAS、替代物質研究</div>
+        <ul class="expertise-tags">
+          <li>PFAS 替代物質的下一步問題</li>
+          <li>廢水處理新技術</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽中原環工系</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge b">★★ B</span>
+          <div class="priority-note">未來議題的前瞻研究</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scholar-row divider">
+      <div class="scholar-cell"><strong>◯ NGO / 倡議夥伴 — 非學者,但是 PFAS 議題的核心戰友</strong></div>
+    </div>
+
+    <!-- 看守台灣 -->
+    <div class="scholar-row">
+      <div class="scholar-cell">
+        <div class="inst-name">看守台灣協會</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="person-name">謝和霖 秘書長</div>
+        <div class="person-name" style="margin-top:6px">林奕均 研究員</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="expertise-main">台灣最積極推動 PFAS 倡議的 NGO</div>
+        <ul class="expertise-tags">
+          <li>與國際 IPEN 網絡有合作</li>
+          <li>曾發表台灣食品包材 PFAS 報告</li>
+          <li>熟悉媒體與政策操作</li>
+        </ul>
+      </div>
+      <div class="scholar-cell">
+        <div class="contact-line">請洽看守台灣協會官網</div>
+      </div>
+      <div class="scholar-cell">
+        <div class="priority-cell">
+          <span class="priority-badge a">★★★ A</span>
+          <div class="priority-note">聯名聲明、共同倡議的首選</div>
+          <div class="priority-note highlight">可協助接觸國際資源</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION IV: TRACKING TABLE -->
+  <!-- =============================== -->
+  <div class="section-header">
+    <div class="section-num">SECTION FOUR · 追蹤</div>
+    <h2 class="section-title-en">Contact <em>Tracker</em></h2>
+    <div class="section-title-tc">聯絡追蹤表(可剪下複製到 Google Sheets)</div>
+    <p class="section-desc">
+      Build a simple spreadsheet, review every two weeks. The template below shows the recommended columns and 10 blank rows for the first round.
+      <span class="section-desc-tc">建議建立簡單試算表,每兩週檢視一次,維持聯絡節奏。以下為建議欄位與第一輪追蹤範例。</span>
+    </p>
+  </div>
+
+  <div class="tracking-wrapper">
+    <table class="tracking">
+      <thead>
+        <tr>
+          <th>學者姓名</th>
+          <th>機構/系所</th>
+          <th>首次寄信日</th>
+          <th>回信狀態</th>
+          <th>後續行動</th>
+          <th>備註</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="status-key">
+    <div class="status-key-item"><span class="icon green">✓</span> <span>同意會面/視訊</span></div>
+    <div class="status-key-item"><span class="icon pacific">◐</span> <span>有興趣但需要時間</span></div>
+    <div class="status-key-item"><span class="icon baltic">◯</span> <span>軟拒絕(保持聯絡)</span></div>
+    <div class="status-key-item"><span class="icon warning">✗</span> <span>明確拒絕</span></div>
+    <div class="status-key-item"><span class="icon dim">—</span> <span>一週未回(可追問一次)</span></div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION V: STRATEGY -->
+  <!-- =============================== -->
+  <div class="section-header">
+    <div class="section-num">SECTION FIVE · 策略</div>
+    <h2 class="section-title-en">Year-One <em>Strategy</em></h2>
+    <div class="section-title-tc">第一年的接觸策略</div>
+    <p class="section-desc">
+      A phased rollout over 6 months: contact A-tier first, then layer in NGO co-signers and B/C tier observation.
+      <span class="section-desc-tc">六個月分階段推進:先接觸 A 級,再加入 NGO 聯名與 B/C 級長期觀察。</span>
+    </p>
+  </div>
+
+  <!-- ROUND 1 -->
+  <div class="strategy-block">
+    <div class="strategy-month">Round 01 · Month 1–2</div>
+    <h3 class="strategy-title">A 級優先接觸</h3>
+    <div class="strategy-desc">先接觸 6 位 A 級對象,每兩週寄出 3 封信。優先順序如下:</div>
+    <ol class="priority-list">
+      <li><strong>高科大 王樹倫 副教授</strong> — 海環系主任,系所層級門戶</li>
+      <li><strong>中興大學 環工系所辦</strong> — 中部最大環工系</li>
+      <li><strong>中山大學 海洋科學系所辦</strong></li>
+      <li><strong>中山大學 海洋環境及工程學系所辦</strong></li>
+      <li><strong>中興大學 化工系所辦</strong> — 自來水安全議題</li>
+      <li><strong>中山大學 葉致微 助理教授</strong> — AI 議題對接</li>
+    </ol>
+  </div>
+
+  <!-- ROUND 2 -->
+  <div class="strategy-block">
+    <div class="strategy-month">Round 02 · Month 3–4</div>
+    <h3 class="strategy-title">國家級專家與 NGO 聯名</h3>
+    <div class="strategy-desc">在地方學者建立 1–2 個合作關係後,再接觸:</div>
+    <ol class="priority-list">
+      <li><strong>看守台灣協會</strong> — 可立即合作的 NGO 聯名</li>
+      <li><strong>台大 林郁真 教授</strong> — 學術委員邀請</li>
+      <li><strong>中研院 李承軒 助研究員</strong> — 技術面合作</li>
+    </ol>
+  </div>
+
+  <!-- ROUND 3 -->
+  <div class="strategy-block">
+    <div class="strategy-month">Round 03 · Month 5–6</div>
+    <h3 class="strategy-title">B 級與 C 級的長期觀察</h3>
+    <div class="strategy-desc">B 級學者作為候補,當 A 級無法配合時遞補。C 級則維持季度問候(寄報告、活動邀請),建立人脈儲備。</div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="strategy-block" style="border-left-color:var(--green)">
+    <div class="strategy-month" style="color:var(--green)">⌖ Success Tips · 成功率提升的關鍵</div>
+    <h3 class="strategy-title">Four rules that matter</h3>
+
+    <div class="tips-grid">
+      <div class="tip-box">
+        <span class="num">01</span>從「<strong style="color:var(--parchment)">系所層級</strong>」進入比直接攻單一學者成功率高,系辦會幫忙轉介合適人選
+      </div>
+      <div class="tip-box">
+        <span class="num">02</span>提案中強調「<strong style="color:var(--parchment)">我們有公民科學數據,想找學者合作分析發表</strong>」比「請幫我們檢測」吸引力強 100 倍
+      </div>
+      <div class="tip-box">
+        <span class="num">03</span>提及國際 <strong style="color:var(--parchment)">Let's Do It World 網絡(190 國)</strong>—— 學者對國際能見度敏感
+      </div>
+      <div class="tip-box">
+        <span class="num">04</span>若能提供<strong style="color:var(--parchment)">企業 CSR 經費</strong>或國科會合作意向,合作成立機率顯著提升
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-note">
+    <div class="closing-italic">
+      本名單僅為起點。實際接洽時請以公開最新資料為準,並尊重學者的時間與專業。
+      <br>
+      <span style="color:var(--ink-faint); font-size:14px">This directory is a starting point — verify all information against current public sources, and respect scholars' time and expertise.</span>
+    </div>
+    <div class="closing-sig">Let's Do It Taiwan ◇ 來此淨國際志工團</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    21 Scholars · Updated 2026 · Companion to Proposal Letter
+  </footer>
+
+</div>
+</body>
+</html>

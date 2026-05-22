@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高流 × 世界清潔日合作提案 — KMC Partnership Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elevated: #122435;
+    --bg-card: #0f1e2c;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --baltic-deep: #3d6b94;
+    --pacific: #e8a268;
+    --pacific-deep: #b87440;
+    --warning: #d97757;
+    --green: #7fb069;
+    --rule: rgba(212, 201, 168, 0.15);
+    --rule-strong: rgba(212, 201, 168, 0.3);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    padding: 60px 40px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(107, 155, 209, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(232, 162, 104, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* COVER HEADER */
+  .cover {
+    text-align: center;
+    padding: 60px 0 50px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-strong);
+    margin-bottom: 60px;
+    position: relative;
+  }
+  .cover-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--baltic);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cover-title-en {
+    font-family: var(--serif);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--parchment);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .cover-title-en em {
+    font-style: italic;
+    color: var(--baltic);
+    font-weight: 300;
+  }
+  .cover-title-tc {
+    font-family: var(--serif-tc);
+    font-size: 18px;
+    color: var(--ink-dim);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    margin-bottom: 30px;
+  }
+  .cover-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .cover-meta .blank {
+    display: inline-block;
+    min-width: 100px;
+    border-bottom: 1px dashed var(--baltic);
+    color: transparent;
+  }
+
+  /* INTRO QUOTE */
+  .intro {
+    margin: 50px 0 70px;
+    padding: 0 30px;
+    border-left: 3px solid var(--baltic);
+  }
+  .intro-en {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .intro-en em { color: var(--baltic); }
+  .intro-tc {
+    font-family: var(--serif-tc);
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    line-height: 1.7;
+  }
+
+  /* SECTION HEADER */
+  .section {
+    margin-bottom: 80px;
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--baltic);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--parchment);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .section-title em { font-style: italic; color: var(--baltic); font-weight: 300; }
+  .section-title-tc {
+    font-family: var(--serif-tc);
+    font-size: 16px;
+    color: var(--ink-dim);
+    margin-bottom: 18px;
+    font-weight: 400;
+  }
+  .section-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+  .section-desc-tc {
+    font-style: normal;
+    font-family: var(--serif-tc);
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  .section-body p {
+    font-family: var(--serif-tc);
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .section-body p strong {
+    color: var(--parchment);
+    font-weight: 600;
+  }
+
+  /* STRATEGIC ADVANTAGE BOX */
+  .advantage-box {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 30px 0;
+    border-left: 4px solid var(--baltic);
+    position: relative;
+  }
+  .advantage-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--baltic);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .advantage-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .advantage-title em { font-style: italic; color: var(--baltic); }
+  .advantage-body {
+    font-family: var(--serif-tc);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+  .advantage-body strong { color: var(--baltic); font-weight: 600; }
+
+  /* VENUE STATS GRID */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 28px 0;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+  }
+  .stat-cell {
+    padding: 22px 18px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-cell-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--baltic);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-cell-num small {
+    font-size: 0.4em;
+    color: var(--ink-dim);
+    font-family: var(--mono);
+    margin-left: 2px;
+  }
+  .stat-cell-label {
+    font-family: var(--serif-tc);
+    font-size: 13px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+
+  /* PROGRAM CARDS */
+  .programs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .program {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    border-top: 3px solid var(--baltic);
+  }
+  .program-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px dotted var(--rule);
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .program-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    color: var(--baltic);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .program-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .program-title em { font-style: italic; font-weight: 300; color: var(--baltic); }
+  .program-tc {
+    font-family: var(--serif-tc);
+    font-size: 14px;
+    color: var(--ink-dim);
+  }
+  .program-letter {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--baltic);
+    opacity: 0.4;
+    line-height: 1;
+  }
+  .program-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .program-block-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .program-block-text {
+    font-family: var(--serif-tc);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .program-block-text strong { color: var(--parchment); }
+  .program-block-text em { color: var(--baltic); font-style: italic; font-weight: 500; }
+  .program-impact {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(107, 155, 209, 0.07);
+    border-left: 2px solid var(--baltic);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--baltic);
+    letter-spacing: 0.04em;
+  }
+
+  /* ASK BOX */
+  .ask {
+    background: var(--bg-card);
+    border: 2px solid var(--baltic);
+    padding: 36px 40px;
+    margin: 50px 0;
+  }
+  .ask-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--baltic);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .ask-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--parchment);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+  .ask-title em { font-style: italic; color: var(--baltic); }
+  .ask-body {
+    font-family: var(--serif-tc);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .ask-list {
+    list-style: none;
+  }
+  .ask-list li {
+    padding-left: 28px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+    font-family: var(--serif-tc);
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .ask-list li::before {
+    content: counter(askctr, decimal-leading-zero);
+    counter-increment: askctr;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--baltic);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .ask-list { counter-reset: askctr; }
+  .ask-list li strong { color: var(--parchment); }
+
+  /* TIMELINE */
+  .timeline {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 20px;
+    position: relative;
+  }
+  .timeline-rail {
+    grid-column: 1 / -1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--baltic), var(--pacific));
+    margin-bottom: 24px;
+  }
+  .phase {
+    padding: 0 16px;
+    border-right: 1px dotted var(--rule);
+    position: relative;
+  }
+  .phase:first-child { padding-left: 0; }
+  .phase:last-child { padding-right: 0; border-right: none; }
+  .phase-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--baltic);
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+  }
+  .phase-date {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--parchment);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .phase-title {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .phase-items {
+    list-style: none;
+  }
+  .phase-item {
+    padding: 4px 0 4px 12px;
+    position: relative;
+    font-family: var(--serif-tc);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+  }
+  .phase-item::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    color: var(--baltic);
+  }
+
+  /* CLOSING LETTER SECTION */
+  .closing-letter {
+    margin-top: 80px;
+    padding: 50px 40px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+  }
+  .letter-head {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .letter-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--baltic);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .letter-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--parchment);
+    font-weight: 500;
+  }
+  .letter-body {
+    font-family: var(--serif-tc);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink);
+  }
+  .letter-body p { margin-bottom: 14px; text-align: justify; }
+  .letter-signature {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dotted var(--rule);
+    text-align: right;
+    font-family: var(--serif-tc);
+    color: var(--ink-dim);
+    font-size: 14px;
+  }
+  .letter-signature .org {
+    color: var(--parchment);
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .blank-inline {
+    display: inline-block;
+    min-width: 140px;
+    border-bottom: 1px dashed var(--baltic);
+    color: transparent;
+  }
+
+  /* CLOSING QUOTE */
+  .closing-quote {
+    margin-top: 60px;
+    padding: 40px 30px;
+    text-align: center;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .closing-quote-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .closing-quote-text em { color: var(--baltic); }
+  .closing-quote-attr {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; color: #000; padding: 0; background-image: none; }
+    .container { max-width: none; }
+    .cover-title-en, .section-title, .program-title, .advantage-title,
+    .ask-title, .letter-title, .closing-quote-text, .stat-cell-num,
+    .program-letter, .letter-signature .org { color: #0F2C4A; }
+    .cover-title-en em, .section-title em, .program-title em, .advantage-title em,
+    .ask-title em, .closing-quote-text em { color: #3D6B94; }
+    .section-num, .program-tag, .ask-tag, .cover-tag, .letter-tag,
+    .program-block-label, .phase-num { color: #0F2C4A; }
+    .program, .advantage-box, .ask, .timeline, .stat-grid, .closing-letter {
+      background: white; border-color: #CCC;
+    }
+    .closing-quote, .cover, .intro { border-color: #ccc; }
+    .section { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 30px 18px; }
+    .cover-title-en { font-size: 42px; }
+    .section-title { font-size: 26px; }
+    .program-title { font-size: 22px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-cell:nth-child(2n) { border-right: none; }
+    .stat-cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .program-detail, .timeline-grid { grid-template-columns: 1fr; gap: 16px; }
+    .timeline-rail { display: none; }
+    .phase { border-right: none; border-bottom: 1px dotted var(--rule); padding: 0 0 16px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="cover-tag">PARTNERSHIP PROPOSAL · 合作提案</div>
+    <h1 class="cover-title-en">Stage <em>×</em> Sea</h1>
+    <div class="cover-title-tc">高雄流行音樂中心 × 世界清潔日合作提案</div>
+    <div class="cover-meta">
+      <div>For Kaohsiung Music Center · 致 高雄流行音樂中心</div>
+      <div>Submitted by Let's Do It Taiwan</div>
+      <div>Year <span class="blank">______</span> · Month <span class="blank">______</span></div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-en">
+      "海音不只是海浪的台灣話,更是流行音樂的台灣味。"
+      <br>—— 高流首任執行長 李欣芸
+    </div>
+    <div class="intro-tc">
+      高流是全台唯一「散場走 100 步就是海」的場館。當我們重新閱讀高流的願景——「<em style="color:var(--baltic); font-style:normal">海洋文化及流行音樂中心</em>」——海洋與音樂從來不是兩件事。本提案邀請高流與世界清潔日(World Cleanup Day)合作,讓這 11.89 公頃的港邊腹地,成為台灣公民環境行動的旗艦現場。
+    </div>
+  </div>
+
+  <!-- SECTION 1: WHY KMC -->
+  <section class="section">
+    <div class="section-num">SECTION ONE · 戰略契合</div>
+    <h2 class="section-title">Why <em>KMC</em> Specifically</h2>
+    <div class="section-title-tc">為什麼合作的對象,非高流莫屬</div>
+    <p class="section-desc">
+      KMC is the only major music venue in Taiwan built directly on the coast — the audience walks out of the concert and into the ocean question.
+      <span class="section-desc-tc">高流是全台唯一直接面海的大型音樂場館——觀眾走出演唱會的下一步,就站在海洋議題的現場。</span>
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-cell-num">11.89<small>ha</small></div>
+        <div class="stat-cell-label">港邊腹地 · 11–15 號碼頭</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">6<small>K</small></div>
+        <div class="stat-cell-label">海音館容量 · 室內主場</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">12<small>K+</small></div>
+        <div class="stat-cell-label">海風廣場 · 戶外大型場地</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">100<small>步</small></div>
+        <div class="stat-cell-label">從散場到海邊的距離</div>
+      </div>
+    </div>
+
+    <div class="advantage-box">
+      <div class="advantage-tag">★ STRATEGIC ADVANTAGE 戰略優勢</div>
+      <div class="advantage-title">The Only Venue Where the <em>Sea</em> Is the Stage</div>
+      <div class="advantage-body">
+        高流的場館命名本身就包含海洋——<strong>海音館、海風廣場、鯨魚堤岸、海豚步道、音浪塔</strong>,這些名字不是行銷修辭,而是場館 DNA 的一部分。當公民環境行動需要一個「海與音樂同時在場」的旗艦場景時,全台灣只有高流符合。其他大型場館(小巨蛋、大巨蛋、林口體育館)都在內陸,跟海洋議題的連結需要額外論述;<strong>但高流的觀眾,演唱會結束時可以直接看到、走到、觸碰到那片海</strong>。
+      </div>
+    </div>
+
+    <div class="section-body">
+      <p>高流自 2021 年啟用以來,已舉辦過<strong>金音創作獎、金曲獎、原創樂團競賽「樂團興奮波」、高雄跨年晚會、《下酒祭》</strong>等指標性活動,以及國內外大型演唱會(包含 TWICE、Doja Cat、SHINee KEY 與溫流、CNBLUE、怕胖團等)。場館定位明確、設施完善、區位優越——對音樂產業的服務已穩固,**下一步是把這個基地擴展為「音樂 × 環境」雙軸的公民空間**。</p>
+      <p>本提案的核心主張是:讓高流不只是「音樂出海口」,更是「<strong>環境行動的入海口</strong>」。透過三個可規模化的合作模式,把演唱會的人流,轉化為台灣海洋治理的關鍵動能。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: THREE PROGRAMS -->
+  <section class="section">
+    <div class="section-num">SECTION TWO · 三個合作模式</div>
+    <h2 class="section-title">Three <em>Signature</em> Programs</h2>
+    <div class="section-title-tc">三個可規模化、可量化、可媒體化的合作活動</div>
+    <p class="section-desc">
+      Three programs designed to fit KMC's existing operations and audience flow — without disrupting the music programming.
+      <span class="section-desc-tc">三個活動模式,完全嵌入高流現有運作節奏與觀眾動線——不干擾音樂節目,反而強化它的公共敘事。</span>
+    </p>
+
+    <div class="programs">
+
+      <!-- PROGRAM A -->
+      <div class="program">
+        <div class="program-head">
+          <div>
+            <div class="program-tag">PROGRAM A · 淨灘 2.0 演前行動</div>
+            <h3 class="program-title">Pre-show <em>Cleanup 2.0</em></h3>
+            <div class="program-tc">演前 90 分鐘的「淨灘 2.0 × Enode 公民科學家」活動 / 南部 eDNA 快閃採樣候選場域</div>
+          </div>
+          <div class="program-letter">A</div>
+        </div>
+
+        <div class="program-detail">
+          <div>
+            <div class="program-block-label">機制 · MECHANIC</div>
+            <div class="program-block-text">演唱會、音樂祭、頒獎典禮前 2 小時,於海風廣場、海豚步道一帶執行「<em>淨灘 2.0 演前行動</em>」。本團體主導,科學夥伴包括 <strong>TCRS 台灣珊瑚礁學會</strong>(湯森林博士,珊瑚全共生體研究框架)與<strong>海洋大學海生所</strong>(NGS 次世代定序)。活動含<strong>輕量淨灘 + 細網濾砂(微塑膠清除)+ eDNA 環境 DNA 採樣 + ICC 標準紀錄</strong>。報名為主,規模建議 100–300 人/場。</div>
+            <div class="program-block-label">配套 · SUPPORT</div>
+            <div class="program-block-text">高流提供:活動報名管道、現場硬體、官網與社群曝光、海音館跑馬燈致謝。Let's Do It Taiwan 提供:三層 Enode 培訓體系(基礎/實務/進階)、與全球 World Cleanup Day 資料庫對接、與 TCRS × NTOU 分析網絡銜接。</div>
+          </div>
+
+          <div>
+            <div class="program-block-label">為何適合高流 · WHY KMC</div>
+            <div class="program-block-text">「<strong>場域即敘事</strong>」是高流最強的資產之一。其他場館要說海洋議題,需要把人運到別處;高流就在現場,鏡頭一拍就是港、是海、是音浪塔。<strong>11–15 號碼頭區域可成為淨灘 2.0 全台 50 觀測點中的「南部 eDNA 快閃採樣」標桿場域</strong>——這正是亞洲首套珊瑚微生物健康基線「南北雙樣本」的關鍵組成。</div>
+            <div class="program-block-label">國際亮點 · INTL SPOTLIGHT</div>
+            <div class="program-block-text">2026 年 4 月,台灣淨灘 2.0 將代表全球 211 個 WCD 參與國中的<strong>「22 個最具代表性故事之一」</strong>於歐洲議會(布魯塞爾)展出。高流的場域影像有機會成為展示素材的一部分,把高雄寫進歐洲議會的故事。</div>
+          </div>
+        </div>
+
+        <div class="program-impact">⌖ 預期觸及 · 試辦期 100–300 人/場 × 12 場/年 = 1,200–3,600 名新培訓 Enode 公民科學家/年 + 南部 eDNA 採樣資料</div>
+      </div>
+
+      <!-- PROGRAM B -->
+      <div class="program">
+        <div class="program-head">
+          <div>
+            <div class="program-tag">PROGRAM B · 場館減塑認證</div>
+            <h3 class="program-title">Plastic-Free <em>Stage</em></h3>
+            <div class="program-tc">無塑演唱會場館認證 — 從場內改變產業習慣</div>
+          </div>
+          <div class="program-letter">B</div>
+        </div>
+
+        <div class="program-detail">
+          <div>
+            <div class="program-block-label">機制 · MECHANIC</div>
+            <div class="program-block-text">高流與 Let's Do It Taiwan 共同制定「<em>無塑演唱會 SOP</em>」——涵蓋:押金制環保杯、水補充站、自備水壺獎勵、周邊餐飲承諾不使用一次性塑膠餐具、垃圾分類站。場館給予<strong>「Plastic-Free Stage」認證標章</strong>。</div>
+            <div class="program-block-label">配套 · SUPPORT</div>
+            <div class="program-block-text">高流提供:場館硬體升級(水站、回收站)、與周邊店家溝通管道、認證標章使用權。Let's Do It Taiwan 提供:SOP 設計、員工培訓、年度稽核、減塑量化報告(可入 ESG 報告書)。</div>
+          </div>
+
+          <div>
+            <div class="program-block-label">為何適合高流 · WHY KMC</div>
+            <div class="program-block-text">高流屬於行政法人,在「<strong>公共任務</strong>」上有比商業場館更明確的責任,推動減塑認證有政策合理性。同時,認證可成為其他場館(小巨蛋、大巨蛋)的<strong>標竿與壓力</strong>——這是文化領導地位的展現。</div>
+            <div class="program-block-label">產業外溢 · INDUSTRY SPILLOVER</div>
+            <div class="program-block-text">高流的認證標準,有機會推及到<strong>大港開唱、簡單生活節、屏東草地音樂節</strong>等南台灣音樂祭,進一步擴大規模效應。</div>
+          </div>
+        </div>
+
+        <div class="program-impact">⌖ 預期觸及 · 5,000 人/場 × 50+ 場/年 = 250,000 人次直接體驗無塑場館</div>
+      </div>
+
+      <!-- PROGRAM C -->
+      <div class="program">
+        <div class="program-head">
+          <div>
+            <div class="program-tag">PROGRAM C · 9/20 年度旗艦</div>
+            <h3 class="program-title">World Cleanup <em>Music Day</em></h3>
+            <div class="program-tc">9 月 20 日 世界清潔日 × 海音音樂祭 — 年度旗艦活動</div>
+          </div>
+          <div class="program-letter">C</div>
+        </div>
+
+        <div class="program-detail">
+          <div>
+            <div class="program-block-label">機制 · MECHANIC</div>
+            <div class="program-block-text">每年 9 月 20 日(聯合國世界清潔日),於高流舉辦「<em>世界清潔日 × 海音音樂祭</em>」:上午海岸清潔+海洋議題論壇 → 下午音樂工作坊與裝置藝術 → 晚上戶外音樂會。可邀請<strong>南台灣音樂人(林生祥、滅火器、茄子蛋、伍佰、陳建騏等)</strong>參與。</div>
+            <div class="program-block-label">配套 · SUPPORT</div>
+            <div class="program-block-text">高流提供:海風廣場場地、舞台技術、主辦背書、媒體記者會。Let's Do It Taiwan 提供:9/20 國際品牌串連、海岸監測技術、志工網絡、企業 ESG 贊助洽談。</div>
+          </div>
+
+          <div>
+            <div class="program-block-label">為何適合高流 · WHY KMC</div>
+            <div class="program-block-text">高流的「<strong>下酒祭</strong>」、「<strong>樂團興奮波</strong>」、「<strong>跨年晚會</strong>」已建立年度節氣感。增加一個<strong>「9/20 海音音樂祭」</strong>可形成春夏秋冬四季完整品牌,並讓高流躋身國際清潔日的<strong>亞洲區指標場館</strong>。</div>
+            <div class="program-block-label">國際串連 · GLOBAL TIE-IN</div>
+            <div class="program-block-text">2025 年 World Cleanup Day 全球 2,500 萬人參與、190 國響應。高流可成為<strong>亞洲區唯一以演唱會場館形式響應</strong>的指標,進入全球文化媒體報導視野。</div>
+          </div>
+        </div>
+
+        <div class="program-impact">⌖ 預期觸及 · 首屆 10,000–20,000 人實體參與 · 線上擴散 30 萬+</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: TIMELINE -->
+  <section class="section">
+    <div class="section-num">SECTION THREE · 第一年路徑</div>
+    <h2 class="section-title">Year One <em>Roadmap</em></h2>
+    <div class="section-title-tc">建議的第一年合作展開節奏 — 從會面到落地</div>
+
+    <div class="timeline">
+      <div class="timeline-grid">
+        <div class="timeline-rail"></div>
+        <div class="phase">
+          <div class="phase-num">PHASE 01</div>
+          <div class="phase-date">Q1 · 2026</div>
+          <div class="phase-title">建立合作框架</div>
+          <ul class="phase-items">
+            <li class="phase-item">首次提案會議(高流董事會/執行長辦公室)</li>
+            <li class="phase-item">確認試辦活動 1–2 場</li>
+            <li class="phase-item">簽署合作意向書(LOI)</li>
+            <li class="phase-item">內部團隊對接</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-num">PHASE 02</div>
+          <div class="phase-date">Q2 · 2026</div>
+          <div class="phase-title">試辦與優化</div>
+          <ul class="phase-items">
+            <li class="phase-item">執行 2 場 Pre-show Cleanup 2.0(淨灘 2.0 演前行動)</li>
+            <li class="phase-item">1 場 Plastic-Free Stage 試辦</li>
+            <li class="phase-item">蒐集數據與媒體素材</li>
+            <li class="phase-item">第一份成果報告</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-num">PHASE 03</div>
+          <div class="phase-date">Q3 · 2026</div>
+          <div class="phase-title">9/20 首屆旗艦</div>
+          <ul class="phase-items">
+            <li class="phase-item">第一屆 World Cleanup Music Day</li>
+            <li class="phase-item">邀請南台灣音樂人響應</li>
+            <li class="phase-item">國際媒體記者會(對接 Let's Do It World)</li>
+            <li class="phase-item">數據成果發佈</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-num">PHASE 04</div>
+          <div class="phase-date">Q4 · 2026</div>
+          <div class="phase-title">機構化與擴大</div>
+          <ul class="phase-items">
+            <li class="phase-item">推動 MOU 正式簽署</li>
+            <li class="phase-item">爭取文化部、海委會經費支持</li>
+            <li class="phase-item">把無塑認證推廣到其他南台灣音樂祭</li>
+            <li class="phase-item">2027 年度規劃</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ASK -->
+  <section class="section">
+    <div class="ask">
+      <div class="ask-tag">⌖ THE ASK · 我們希望高流</div>
+      <h2 class="ask-title">What We Hope <em>KMC</em> Will Do</h2>
+      <div class="ask-body">本提案的下一步,並非要求高流即刻投入大量資源,而是希望開啟一個對話與試辦的可能。具體希望高流考慮以下三項中的<strong>任一項或多項</strong>:</div>
+      <ol class="ask-list">
+        <li><strong>會面對話 · An initial meeting</strong> — 提供 45–60 分鐘的初步對話機會,讓 Let's Do It Taiwan 與高流團隊面對面討論合作可能性</li>
+        <li><strong>試辦活動 · One pilot</strong> — 共同設計並執行一場 Program A 或 Program B 試辦,評估效益後再決定下一步</li>
+        <li><strong>9/20 列入規劃 · 9/20 in the calendar</strong> — 預留 2026 年 9 月 20 日的海風廣場檔期,作為「World Cleanup Music Day」的首屆場地</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CLOSING LETTER -->
+  <section class="closing-letter">
+    <div class="letter-head">
+      <div class="letter-tag">FORMAL COVER LETTER · 致函</div>
+      <div class="letter-title">致 高流董事會、執行長</div>
+    </div>
+    <div class="letter-body">
+      <p>高流董事會、執行長丁度嵐 鈞鑒:</p>
+      <p>謹代表「來此淨國際志工團」(Let's Do It Taiwan)致函。本團體為內政部立案之社團法人,屬於源自愛沙尼亞、現於 190 國推展的全球公民環境運動 Let's Do It! World 之台灣合作夥伴。每年 9 月 20 日的世界清潔日(World Cleanup Day),自 2024 年起已正式列入聯合國國際日。</p>
+      <p>本團體長期關注台灣海洋議題與公民科學參與。在研究全球各國的公民行動經驗時,我們注意到:**台灣的海洋公共敘事,缺少一個既能容納大規模群眾、又緊鄰海洋現場的旗艦場域**。高流的存在,使這個敘事真正可能。</p>
+      <p>本提案不是「邀請高流加入環保運動」,而是「邀請高流成為台灣海洋議題的<strong>文化主場館</strong>」。三個合作模式皆嵌入高流既有運作,不增加額外負擔,且有機會強化高流的<strong>公共任務指標、媒體曝光、國際能見度</strong>——這些都是行政法人的核心成果指標。</p>
+      <p>本提案僅為對話起點。如蒙惠允撥冗會面,我們可依高流團隊的時間與興趣,客製化討論優先項目。隨函另附本提案完整 HTML 版本與系列研究報告連結。</p>
+      <p>耑此</p>
+      <p>敬頌</p>
+      <p style="padding-left: 36px"><strong>研祺</strong></p>
+    </div>
+    <div class="letter-signature">
+      <div class="org">來此淨國際志工團 LET'S DO IT! Taiwan</div>
+      <div><span class="blank-inline"></span>(發文人姓名與職稱)</div>
+      <div>電話:<span class="blank-inline"></span> · 信箱:<span class="blank-inline"></span></div>
+    </div>
+  </section>
+
+  <!-- CLOSING QUOTE -->
+  <div class="closing-quote">
+    <div class="closing-quote-text">"在港邊工業城,白天有烈日,晚上又有愛河充滿了柔情。"<br><em>—— 把這片海寫進每一場演唱會的回憶裡。</em></div>
+    <div class="closing-quote-attr">Let's Do It Taiwan × Kaohsiung Music Center</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    KMC Partnership Proposal · Let's Do It Taiwan · 2026
+  </footer>
+
+</div>
+</body>
+</html>

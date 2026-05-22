@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北流 × 世界清潔日合作提案 — TMC Partnership Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elevated: #122435;
+    --bg-card: #0f1e2c;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --pacific: #e8a268;
+    --pacific-deep: #b87440;
+    --warning: #d97757;
+    --green: #7fb069;
+    --rule: rgba(212, 201, 168, 0.15);
+    --rule-strong: rgba(212, 201, 168, 0.3);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    padding: 60px 40px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(232, 162, 104, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(127, 176, 105, 0.04) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* COVER */
+  .cover {
+    text-align: center;
+    padding: 60px 0 50px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-strong);
+    margin-bottom: 60px;
+  }
+  .cover-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--pacific);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cover-title-en {
+    font-family: var(--serif);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--parchment);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .cover-title-en em { font-style: italic; color: var(--pacific); font-weight: 300; }
+  .cover-title-tc {
+    font-family: var(--serif-tc);
+    font-size: 18px;
+    color: var(--ink-dim);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    margin-bottom: 30px;
+  }
+  .cover-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .cover-meta .blank {
+    display: inline-block; min-width: 100px;
+    border-bottom: 1px dashed var(--pacific);
+    color: transparent;
+  }
+
+  /* INTRO */
+  .intro {
+    margin: 50px 0 70px;
+    padding: 0 30px;
+    border-left: 3px solid var(--pacific);
+  }
+  .intro-en {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .intro-en em { color: var(--pacific); }
+  .intro-tc {
+    font-family: var(--serif-tc);
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    line-height: 1.7;
+  }
+  .intro-tc em { color: var(--pacific); font-style: normal; font-weight: 500; }
+
+  /* SECTION HEADER */
+  .section { margin-bottom: 80px; }
+  .section-num {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.25em; color: var(--pacific);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: 38px;
+    font-weight: 400; color: var(--parchment);
+    line-height: 1.15; margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .section-title em { font-style: italic; color: var(--pacific); font-weight: 300; }
+  .section-title-tc {
+    font-family: var(--serif-tc); font-size: 16px;
+    color: var(--ink-dim); margin-bottom: 18px;
+    font-weight: 400;
+  }
+  .section-desc {
+    font-family: var(--serif); font-style: italic;
+    font-size: 16px; color: var(--ink-dim);
+    line-height: 1.6; margin-bottom: 32px;
+    max-width: 800px;
+  }
+  .section-desc-tc {
+    font-style: normal; font-family: var(--serif-tc);
+    display: block; margin-top: 4px; font-size: 14px;
+  }
+  .section-body p {
+    font-family: var(--serif-tc); font-size: 15px;
+    line-height: 1.85; margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .section-body p strong { color: var(--parchment); font-weight: 600; }
+  .section-body p em { color: var(--pacific); font-style: italic; font-weight: 500; }
+
+  /* ALIGNMENT BOX */
+  .alignment-box {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 30px 0;
+    border-left: 4px solid var(--pacific);
+  }
+  .alignment-tag {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; color: var(--pacific);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .alignment-title {
+    font-family: var(--serif); font-size: 24px;
+    font-weight: 500; color: var(--parchment);
+    line-height: 1.25; margin-bottom: 18px;
+  }
+  .alignment-title em { font-style: italic; color: var(--pacific); }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .pillar {
+    padding: 18px 20px;
+    background: rgba(232, 162, 104, 0.05);
+    border-top: 2px solid var(--pacific);
+  }
+  .pillar-num {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; color: var(--pacific);
+    margin-bottom: 6px;
+  }
+  .pillar-name {
+    font-family: var(--serif); font-size: 20px;
+    font-weight: 500; color: var(--parchment);
+    margin-bottom: 8px;
+  }
+  .pillar-text {
+    font-family: var(--serif-tc); font-size: 13px;
+    color: var(--ink-dim); line-height: 1.6;
+  }
+
+  /* STATS */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 28px 0;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+  }
+  .stat-cell {
+    padding: 22px 18px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-cell-num {
+    font-family: var(--serif); font-size: 32px;
+    font-weight: 400; color: var(--pacific);
+    line-height: 1; margin-bottom: 6px;
+  }
+  .stat-cell-num small {
+    font-size: 0.4em; color: var(--ink-dim);
+    font-family: var(--mono); margin-left: 2px;
+  }
+  .stat-cell-label {
+    font-family: var(--serif-tc); font-size: 13px;
+    color: var(--ink-dim); line-height: 1.5;
+  }
+
+  /* PROGRAMS */
+  .programs { display: grid; grid-template-columns: 1fr; gap: 22px; }
+  .program {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    border-top: 3px solid var(--pacific);
+  }
+  .program-head {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 20px;
+    padding-bottom: 16px; border-bottom: 1px dotted var(--rule);
+    flex-wrap: wrap; gap: 14px;
+  }
+  .program-tag {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.22em; color: var(--pacific);
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .program-title {
+    font-family: var(--serif); font-size: 28px;
+    font-weight: 500; color: var(--parchment);
+    line-height: 1.2; margin-bottom: 2px;
+  }
+  .program-title em { font-style: italic; font-weight: 300; color: var(--pacific); }
+  .program-tc {
+    font-family: var(--serif-tc); font-size: 14px;
+    color: var(--ink-dim);
+  }
+  .program-letter {
+    font-family: var(--serif); font-style: italic;
+    font-size: 56px; font-weight: 300;
+    color: var(--pacific); opacity: 0.4; line-height: 1;
+  }
+  .program-detail {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .program-block-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; color: var(--ink-dim);
+    text-transform: uppercase; margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .program-block-text {
+    font-family: var(--serif-tc); font-size: 14px;
+    line-height: 1.7; color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .program-block-text strong { color: var(--parchment); }
+  .program-block-text em { color: var(--pacific); font-style: italic; font-weight: 500; }
+  .program-impact {
+    margin-top: 14px; padding: 10px 14px;
+    background: rgba(232, 162, 104, 0.07);
+    border-left: 2px solid var(--pacific);
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--pacific); letter-spacing: 0.04em;
+  }
+
+  /* ASK */
+  .ask {
+    background: var(--bg-card);
+    border: 2px solid var(--pacific);
+    padding: 36px 40px;
+    margin: 50px 0;
+  }
+  .ask-tag {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.28em; color: var(--pacific);
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .ask-title {
+    font-family: var(--serif); font-size: 30px;
+    font-weight: 500; color: var(--parchment);
+    margin-bottom: 18px; line-height: 1.2;
+  }
+  .ask-title em { font-style: italic; color: var(--pacific); }
+  .ask-body {
+    font-family: var(--serif-tc); font-size: 15px;
+    line-height: 1.8; color: var(--ink); margin-bottom: 16px;
+  }
+  .ask-list { list-style: none; counter-reset: askctr; }
+  .ask-list li {
+    padding-left: 28px; padding-top: 8px; padding-bottom: 8px;
+    position: relative; font-family: var(--serif-tc);
+    font-size: 14.5px; line-height: 1.65; color: var(--ink);
+  }
+  .ask-list li::before {
+    content: counter(askctr, decimal-leading-zero);
+    counter-increment: askctr;
+    position: absolute; left: 0; top: 8px;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--pacific); font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .ask-list li strong { color: var(--parchment); }
+
+  /* TIMELINE */
+  .timeline {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+  }
+  .timeline-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 20px; position: relative;
+  }
+  .timeline-rail {
+    grid-column: 1 / -1; height: 2px;
+    background: linear-gradient(90deg, var(--pacific), var(--green));
+    margin-bottom: 24px;
+  }
+  .phase {
+    padding: 0 16px;
+    border-right: 1px dotted var(--rule);
+  }
+  .phase:first-child { padding-left: 0; }
+  .phase:last-child { padding-right: 0; border-right: none; }
+  .phase-num {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--pacific); letter-spacing: 0.2em;
+    margin-bottom: 4px;
+  }
+  .phase-date {
+    font-family: var(--serif); font-size: 16px;
+    color: var(--parchment); font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .phase-title {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--ink); font-weight: 600;
+    margin-bottom: 12px; line-height: 1.3;
+  }
+  .phase-items { list-style: none; }
+  .phase-item {
+    padding: 4px 0 4px 12px; position: relative;
+    font-family: var(--serif-tc); font-size: 12.5px;
+    color: var(--ink-dim); line-height: 1.6;
+  }
+  .phase-item::before {
+    content: '◦'; position: absolute; left: 0; color: var(--pacific);
+  }
+
+  /* LETTER */
+  .closing-letter {
+    margin-top: 80px;
+    padding: 50px 40px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+  }
+  .letter-head {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .letter-tag {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.25em; color: var(--pacific);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .letter-title {
+    font-family: var(--serif); font-size: 26px;
+    color: var(--parchment); font-weight: 500;
+  }
+  .letter-body {
+    font-family: var(--serif-tc); font-size: 15px;
+    line-height: 1.85; color: var(--ink);
+  }
+  .letter-body p { margin-bottom: 14px; text-align: justify; }
+  .letter-signature {
+    margin-top: 30px; padding-top: 20px;
+    border-top: 1px dotted var(--rule);
+    text-align: right;
+    font-family: var(--serif-tc);
+    color: var(--ink-dim); font-size: 14px;
+  }
+  .letter-signature .org {
+    color: var(--parchment); font-weight: 600;
+    font-size: 16px; margin-bottom: 6px;
+  }
+  .blank-inline {
+    display: inline-block; min-width: 140px;
+    border-bottom: 1px dashed var(--pacific);
+    color: transparent;
+  }
+
+  /* CLOSING QUOTE */
+  .closing-quote {
+    margin-top: 60px; padding: 40px 30px;
+    text-align: center;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .closing-quote-text {
+    font-family: var(--serif); font-style: italic;
+    font-size: 24px; color: var(--ink);
+    line-height: 1.5; margin-bottom: 10px;
+  }
+  .closing-quote-text em { color: var(--pacific); }
+  .closing-quote-attr {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--ink-dim); letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer {
+    margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: var(--mono); font-size: 10px;
+    color: var(--ink-faint); letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; color: #000; padding: 0; background-image: none; }
+    .container { max-width: none; }
+    .cover-title-en, .section-title, .program-title, .alignment-title,
+    .ask-title, .letter-title, .closing-quote-text, .stat-cell-num,
+    .program-letter, .letter-signature .org, .pillar-name { color: #0F2C4A; }
+    .cover-title-en em, .section-title em, .program-title em, .alignment-title em,
+    .ask-title em, .closing-quote-text em { color: #B87440; }
+    .section-num, .program-tag, .ask-tag, .cover-tag, .letter-tag,
+    .program-block-label, .phase-num, .alignment-tag, .pillar-num { color: #B87440; }
+    .program, .alignment-box, .ask, .timeline, .stat-grid, .closing-letter, .pillar {
+      background: white; border-color: #CCC;
+    }
+    .closing-quote, .cover, .intro { border-color: #ccc; }
+    .section { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 30px 18px; }
+    .cover-title-en { font-size: 42px; }
+    .section-title { font-size: 26px; }
+    .program-title { font-size: 22px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-cell:nth-child(2n) { border-right: none; }
+    .stat-cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .program-detail, .timeline-grid, .pillars { grid-template-columns: 1fr; gap: 16px; }
+    .timeline-rail { display: none; }
+    .phase { border-right: none; border-bottom: 1px dotted var(--rule); padding: 0 0 16px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="cover-tag">PARTNERSHIP PROPOSAL · 合作提案</div>
+    <h1 class="cover-title-en">Stage <em>×</em> Sustainability</h1>
+    <div class="cover-title-tc">臺北流行音樂中心 × 世界清潔日合作提案</div>
+    <div class="cover-meta">
+      <div>For Taipei Music Center · 致 臺北流行音樂中心</div>
+      <div>Submitted by Let's Do It Taiwan</div>
+      <div>Year <span class="blank">______</span> · Month <span class="blank">______</span></div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-en">
+      "北流未來核心發展的願景,除了延續黃韻玲董事長擘劃的前景,同時有二個公共任務目標,包含將北流打造成<em>亞太地區重要的流行音樂交流平台</em>,以及透過<em>人才、文化、環境達到永續經營的目標</em>。"
+      <br>—— 北流董事長 梁序倫(2026 年 4 月接任致詞)
+    </div>
+    <div class="intro-tc">
+      北流第三屆董監事於 2026 年 4 月 1 日上任,明確標舉「<em>人才永續、文化永續、環境永續</em>」三大方向,並宣示「<em>搭上淨零碳排世界趨勢</em>」。本提案即是回應這個新階段的具體合作邀請——讓北流在「環境永續」這個尚未開始耕耘的領域,擁有一個能立刻啟動、又能延續多年的旗艦合作。
+    </div>
+  </div>
+
+  <!-- SECTION 1: WHY TMC -->
+  <section class="section">
+    <div class="section-num">SECTION ONE · 戰略契合</div>
+    <h2 class="section-title">Why <em>TMC</em> Specifically Now</h2>
+    <div class="section-title-tc">為什麼是北流、為什麼是現在</div>
+    <p class="section-desc">
+      TMC's new 2026 vision explicitly names "environmental sustainability" as one of its three core pillars. This proposal is built specifically to operationalize that commitment.
+      <span class="section-desc-tc">北流 2026 新願景明確將「環境永續」列為三大核心之一。本提案完全聚焦於把這個承諾轉化為具體、可操作、可衡量的行動。</span>
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-cell-num">93<small>萬</small></div>
+        <div class="stat-cell-label">2025 年訪客人次</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">59<small>%</small></div>
+        <div class="stat-cell-label">2025 年營運自籌比例</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">8.96<small>ha</small></div>
+        <div class="stat-cell-label">南港園區面積</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">8.5<small>萬</small></div>
+        <div class="stat-cell-label">首屆 TMEX 到訪人次</div>
+      </div>
+    </div>
+
+    <div class="alignment-box">
+      <div class="alignment-tag">★ STRATEGIC ALIGNMENT · 與北流 2026 三大永續方向對位</div>
+      <div class="alignment-title">A Proposal Built Around <em>Your Own</em> Vision</div>
+      <div style="font-family: var(--serif-tc); font-size: 14.5px; color: var(--ink); line-height: 1.75;">本提案的三個合作模式,直接對應北流新任董事長梁序倫於 2026 年 5 月 5 日對外宣示的三大永續方向:</div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">PILLAR 01</div>
+          <div class="pillar-name">人才永續</div>
+          <div class="pillar-text">公民科學志工網絡<strong style="color:var(--parchment)">與北流人才庫對接</strong>——學員可獲環境管理實戰經驗,擴展職涯路徑</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">PILLAR 02</div>
+          <div class="pillar-name">文化永續</div>
+          <div class="pillar-text">每年 9/20 World Cleanup Music Day 成為<strong style="color:var(--parchment)">北流年度節氣品牌之一</strong>,與 TMEX、JJA、金音獎並列</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">PILLAR 03</div>
+          <div class="pillar-name">環境永續</div>
+          <div class="pillar-text">推動「<strong style="color:var(--parchment)">無塑演唱會認證</strong>」標準,讓北流成為亞太指標性的減碳場館</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-body">
+      <p>北流是台北市第一個行政法人,2025 年已有 <strong>93 萬人次訪客、營運自籌 59%</strong>,**從 0 到 1 的階段已經完成**。新一屆董事會明確提出要從「文化地標」進化為「<em>亞太流行音樂交流平台</em>」+「<em>永續經營典範</em>」。</p>
+      <p>北流既有的優勢:文化館、產業區、表演廳三館體;TMEX 臺北音樂博覽會、JAM JAM ASIA 亞洲音樂節已具國際能見度;演唱會學院、Open Lab、種子教師等人才培育計畫成熟。<strong>環境議題是目前北流敘事中最有可能突破、但尚未深耕</strong>的領域。</p>
+      <p>本提案邀請北流與 Let's Do It Taiwan / World Cleanup Day 合作,以三個可規模化的活動,把「環境永續」這個方向從口號落地為行動。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PROGRAMS -->
+  <section class="section">
+    <div class="section-num">SECTION TWO · 三個合作模式</div>
+    <h2 class="section-title">Three <em>Signature</em> Programs</h2>
+    <div class="section-title-tc">三個可規模化、可量化、可媒體化的合作模式</div>
+    <p class="section-desc">
+      Each program is designed to slot into TMC's existing operations — leveraging the venue, the cultural museum, the industry zone, and the international platform that TMC has already built.
+      <span class="section-desc-tc">每一個活動模式,都直接嵌入北流既有的場館、文化館、產業區與國際平台運作,不需另起爐灶。</span>
+    </p>
+
+    <div class="programs">
+
+      <!-- PROGRAM A -->
+      <div class="program">
+        <div class="program-head">
+          <div>
+            <div class="program-tag">PROGRAM A · 環境永續</div>
+            <h3 class="program-title">Plastic-Free <em>Stage</em></h3>
+            <div class="program-tc">無塑演唱會場館認證 — 從場內改變產業習慣</div>
+          </div>
+          <div class="program-letter">A</div>
+        </div>
+
+        <div class="program-detail">
+          <div>
+            <div class="program-block-label">機制 · MECHANIC</div>
+            <div class="program-block-text">北流與 Let's Do It Taiwan 共同制定「<em>無塑演唱會 SOP</em>」——涵蓋:押金制環保杯、水補充站、自備水壺獎勵、產業區餐飲承諾不使用一次性塑膠、垃圾分類站。場館給予「Plastic-Free Stage」認證標章。</div>
+            <div class="program-block-label">擴大效應 · LEVERAGE</div>
+            <div class="program-block-text">標準制定後,可推廣至<strong>大巨蛋、小巨蛋、林口體育館、桃園棒球場</strong>等北部演唱會場域,使北流成為「<em>北台灣無塑演唱會的標準制定者</em>」。</div>
+          </div>
+
+          <div>
+            <div class="program-block-label">為何適合北流 · WHY TMC</div>
+            <div class="program-block-text">北流是台北市第一個行政法人,在<strong>公共任務指標</strong>上有比商業場館更明確的責任。推動減塑認證符合 2026 「環境永續」承諾,也直接對接 ESG 國際報告框架(TCFD、GRI、SASB),可寫入年度成果報告。</div>
+            <div class="program-block-label">產業區的關鍵角色 · INDUSTRY ZONE</div>
+            <div class="program-block-text">北流產業區內<strong>24 家特色音樂與文創餐飲店舖</strong>是現成的試點,可率先承諾減塑,形成「<em>整個園區無塑</em>」的鮮明示範。</div>
+          </div>
+        </div>
+
+        <div class="program-impact">⌖ 預期觸及 · 5,000 人/場 × 50+ 場/年 = 250,000 人次直接體驗;產業區 24 家店舖長期影響</div>
+      </div>
+
+      <!-- PROGRAM B -->
+      <div class="program">
+        <div class="program-head">
+          <div>
+            <div class="program-tag">PROGRAM B · 文化永續</div>
+            <h3 class="program-title">World Cleanup <em>Music Day</em></h3>
+            <div class="program-tc">9/20 世界清潔日 × 北部 eDNA 快閃採樣 × 北流年度旗艦</div>
+          </div>
+          <div class="program-letter">B</div>
+        </div>
+
+        <div class="program-detail">
+          <div>
+            <div class="program-block-label">機制 · MECHANIC</div>
+            <div class="program-block-text">每年 9 月 20 日,於北流舉辦「<em>World Cleanup Music Day 北流場</em>」,並將<strong>南港旁基隆河沿線</strong>列為淨灘 2.0「<em>北部 eDNA 快閃採樣</em>」標桿場域。科學夥伴包括 <strong>TCRS 台灣珊瑚礁學會</strong>(湯森林博士主導之珊瑚全共生體研究框架)與<strong>海洋大學海生所</strong>(NGS 次世代定序)。上午 Enode 公民科學家活動(eDNA 採樣 + 細網濾砂清微塑膠 + 河岸清潔)+ 環境論壇;下午演唱會學院學員作品發表;晚上表演廳/Live House 環境主題音樂會。</div>
+            <div class="program-block-label">與 TMEX 的關係 · TMEX SYNERGY</div>
+            <div class="program-block-text">TMEX 臺北音樂博覽會通常於 11–12 月舉辦,World Cleanup Music Day 在 9 月,<strong>不重疊、不衝突</strong>,形成「春夏秋冬完整品牌節氣」——讓北流的年度行事曆更具國際辨識度。</div>
+          </div>
+
+          <div>
+            <div class="program-block-label">為何適合北流 · WHY TMC</div>
+            <div class="program-block-text">北流正在打造「<em>亞太重要的流行音樂交流平台</em>」。淨灘 2.0 於 2026 年從全球 211 個 WCD 參與國中,被選為<strong> 22 個最具代表性故事之一</strong>(2026.4 歐洲議會展出)。<strong>基隆河 × eDNA × 音樂祭</strong>的三層連動,給北流一個專屬的、無人可複製的敘事位置——亞太流行音樂中心也是亞洲首套珊瑚微生物健康基線的北部節點。</div>
+            <div class="program-block-label">人才培育銜接 · TALENT TIE-IN</div>
+            <div class="program-block-text">北流演唱會學院、Open Lab、種子教師計畫可<strong>把這場活動當作學員實戰教室</strong>——從企劃、舞台、音控到行銷,完整參與一場具國際能見度的活動。</div>
+          </div>
+        </div>
+
+        <div class="program-impact">⌖ 預期觸及 · 首屆 10,000–20,000 人實體參與 · 線上擴散 30 萬+ · 對接全球 World Cleanup Day 媒體網絡 + 歐洲議會 2026.4 國際展示</div>
+      </div>
+
+      <!-- PROGRAM C -->
+      <div class="program">
+        <div class="program-head">
+          <div>
+            <div class="program-tag">PROGRAM C · 人才永續</div>
+            <h3 class="program-title">Sustainability <em>Open Lab</em></h3>
+            <div class="program-tc">永續音樂產業人才培育 — 與北流人才庫對接</div>
+          </div>
+          <div class="program-letter">C</div>
+        </div>
+
+        <div class="program-detail">
+          <div>
+            <div class="program-block-label">機制 · MECHANIC</div>
+            <div class="program-block-text">與北流現有的「<em>Open Lab 人才培育計畫</em>」對接,新增「<em>永續音樂活動製作</em>」課程模組——涵蓋:活動碳足跡計算、無塑場館管理、ESG 報告書撰寫、國際永續展會案例分析(如英國 Glastonbury、丹麥 Roskilde),並可選修「<strong>Enode 公民科學家</strong>」認證模組,讓學員具備執行淨灘 2.0 監測活動的能力。</div>
+            <div class="program-block-label">合作內容 · CONTENT</div>
+            <div class="program-block-text">Let's Do It Taiwan 提供國際師資網絡、案例與 Enode 培訓教材;北流提供場館實戰場域。<strong>結業生納入北流音樂人才庫的「永續活動製作」專業領域</strong>,並同時成為全台淨灘 2.0 平台的合格培訓人員。</div>
+          </div>
+
+          <div>
+            <div class="program-block-label">為何適合北流 · WHY TMC</div>
+            <div class="program-block-text">演唱會學院的成功經驗(2024 年第一屆累積 500 人次)已證明北流的人才培育機制成熟。新增「永續」模組可<strong>填補產業缺口</strong>——目前台灣演唱會產業<strong>沒有完整的永續活動製作培訓</strong>。</div>
+            <div class="program-block-label">產業外溢 · INDUSTRY IMPACT</div>
+            <div class="program-block-text">結業生將進入主辦公司、演唱會經紀公司、場館運營公司——把永續觀念<strong>從北流擴散到整個產業鏈</strong>。</div>
+          </div>
+        </div>
+
+        <div class="program-impact">⌖ 預期培育 · 每屆 30–50 學員 × 2 屆/年 = 60–100 位永續活動製作專業人才</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: TIMELINE -->
+  <section class="section">
+    <div class="section-num">SECTION THREE · 第一年路徑</div>
+    <h2 class="section-title">Year One <em>Roadmap</em></h2>
+    <div class="section-title-tc">第一年合作展開節奏 — 從會面到 9/20 落地</div>
+
+    <div class="timeline">
+      <div class="timeline-grid">
+        <div class="timeline-rail"></div>
+        <div class="phase">
+          <div class="phase-num">PHASE 01</div>
+          <div class="phase-date">Q2 · 2026</div>
+          <div class="phase-title">建立合作框架</div>
+          <ul class="phase-items">
+            <li class="phase-item">首次提案會議(董事長梁序倫、執行長鄧乃慈辦公室)</li>
+            <li class="phase-item">確認試辦活動範圍</li>
+            <li class="phase-item">簽署合作意向書</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-num">PHASE 02</div>
+          <div class="phase-date">Q3 · 2026</div>
+          <div class="phase-title">9/20 旗艦首屆</div>
+          <ul class="phase-items">
+            <li class="phase-item">首屆 World Cleanup Music Day 北流場</li>
+            <li class="phase-item">同步啟動 Plastic-Free Stage 試辦</li>
+            <li class="phase-item">產業區店家共同響應</li>
+            <li class="phase-item">國際媒體記者會</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-num">PHASE 03</div>
+          <div class="phase-date">Q4 · 2026</div>
+          <div class="phase-title">機構化與擴大</div>
+          <ul class="phase-items">
+            <li class="phase-item">推動 MOU 正式簽署</li>
+            <li class="phase-item">Sustainability Open Lab 首屆招生</li>
+            <li class="phase-item">納入北流 2027 年度規劃</li>
+            <li class="phase-item">與 TMEX 議程連動規劃</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-num">PHASE 04</div>
+          <div class="phase-date">Q1 · 2027</div>
+          <div class="phase-title">產業擴散</div>
+          <ul class="phase-items">
+            <li class="phase-item">無塑演唱會標準推廣至北部其他場館</li>
+            <li class="phase-item">Open Lab 第一屆結業生進入產業</li>
+            <li class="phase-item">與 JAM JAM ASIA 連動的亞洲永續論壇</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ASK -->
+  <section class="section">
+    <div class="ask">
+      <div class="ask-tag">⌖ THE ASK · 我們希望北流</div>
+      <h2 class="ask-title">What We Hope <em>TMC</em> Will Do</h2>
+      <div class="ask-body">本提案的下一步,並非要求北流即刻投入大量資源,而是希望開啟一個對話與試辦的可能。具體希望北流考慮以下三項中的<strong>任一項或多項</strong>:</div>
+      <ol class="ask-list">
+        <li><strong>會面對話 · An initial meeting</strong> — 提供 45–60 分鐘的初步對話機會,讓 Let's Do It Taiwan 與北流團隊面對面討論合作可能性。我們亦樂於與「環境永續」相關之董事或顧問共同會議。</li>
+        <li><strong>2026 年 9 月 20 日的檔期 · 9/20 in the calendar</strong> — 預留 2026 年 9 月 20 日的表演廳或戶外廣場檔期,作為「World Cleanup Music Day 北流首屆」場地</li>
+        <li><strong>Open Lab 模組合作 · Curriculum module</strong> — 將「永續音樂活動製作」納入 Open Lab 2026 下半年或 2027 上半年課程規劃</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CLOSING LETTER -->
+  <section class="closing-letter">
+    <div class="letter-head">
+      <div class="letter-tag">FORMAL COVER LETTER · 致函</div>
+      <div class="letter-title">致 北流董事長梁序倫、執行長鄧乃慈</div>
+    </div>
+    <div class="letter-body">
+      <p>梁董事長序倫、鄧執行長乃慈 鈞鑒:</p>
+      <p>謹代表「來此淨國際志工團」(Let's Do It Taiwan)致函,並恭賀新任董事會於 2026 年 4 月 1 日上任。本團體為內政部立案之社團法人,屬於源自愛沙尼亞、現於 190 國推展的全球公民環境運動 Let's Do It! World 之台灣合作夥伴。每年 9 月 20 日的世界清潔日(World Cleanup Day),自 2024 年起已正式列入聯合國國際日。</p>
+      <p>我們注意到梁董事長在交接典禮上提出的「<strong>人才、文化、環境</strong>」三大永續方向,以及鄧執行長與團隊揭示的「<strong>搭上淨零碳排世界趨勢</strong>」目標。這個方向不僅與 Let's Do It World 的核心使命高度契合,也讓我們相信:<strong>北流是台灣最有機會把「環境永續」這個方向具體落地的音樂場館</strong>。</p>
+      <p>本提案的三個合作模式(Plastic-Free Stage、World Cleanup Music Day、Sustainability Open Lab),完全建立在北流已具備的三大優勢之上——表演廳場域、產業區生態、Open Lab 培育機制。我們提供:國際品牌串連、活動方法、志工網絡、量化監測;北流提供:場域、敘事、人才孵化。**這是真正的對等合作,而非單方面的請求支援**。</p>
+      <p>我們深知北流第三屆甫上任,事務繁忙。本提案僅為對話起點,任何一種程度的合作意向,對本團體皆極具價值。如蒙惠允撥冗會面,可採視訊或實體拜訪,時間長度由貴方決定。</p>
+      <p>耑此</p>
+      <p>敬頌</p>
+      <p style="padding-left: 36px"><strong>研祺</strong></p>
+    </div>
+    <div class="letter-signature">
+      <div class="org">來此淨國際志工團 LET'S DO IT! Taiwan</div>
+      <div><span class="blank-inline"></span>(發文人姓名與職稱)</div>
+      <div>電話:<span class="blank-inline"></span> · 信箱:<span class="blank-inline"></span></div>
+    </div>
+  </section>
+
+  <!-- CLOSING QUOTE -->
+  <div class="closing-quote">
+    <div class="closing-quote-text">"北流不只是現在,更是<em>最靠近未來的地方</em>。"<br>—— 我們希望,這個未來也包含一片<em>更乾淨的太平洋</em>。</div>
+    <div class="closing-quote-attr">Let's Do It Taiwan × Taipei Music Center</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    TMC Partnership Proposal · Let's Do It Taiwan · 2026
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 散熱供應鏈 ESG 合作提案 — Cooling Dividend Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elevated: #122435;
+    --bg-card: #0f1e2c;
+    --ink: #e8ecef;
+    --ink-dim: #8a9ba8;
+    --ink-faint: #4a5a68;
+    --parchment: #d4c9a8;
+    --baltic: #6b9bd1;
+    --pacific: #e8a268;
+    --gold: #c9a96e;
+    --green: #7fb069;
+    --warning: #d97757;
+    --rule: rgba(212, 201, 168, 0.15);
+    --rule-strong: rgba(212, 201, 168, 0.3);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    padding: 60px 40px;
+    background-image:
+      radial-gradient(ellipse at top, rgba(201, 169, 110, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(107, 155, 209, 0.04) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* COVER */
+  .cover {
+    text-align: center;
+    padding: 60px 0 50px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-strong);
+    margin-bottom: 60px;
+  }
+  .cover-tag {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.3em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .cover-title-en {
+    font-family: var(--serif); font-size: 64px;
+    font-weight: 400; line-height: 1;
+    color: var(--parchment); margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .cover-title-en em { font-style: italic; color: var(--gold); font-weight: 300; }
+  .cover-title-tc {
+    font-family: var(--serif-tc); font-size: 18px;
+    color: var(--ink-dim); font-weight: 400;
+    letter-spacing: 0.08em; margin-bottom: 30px;
+  }
+  .cover-meta {
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink-dim); letter-spacing: 0.18em;
+    text-transform: uppercase; line-height: 1.8;
+  }
+  .cover-meta .blank {
+    display: inline-block; min-width: 100px;
+    border-bottom: 1px dashed var(--gold);
+    color: transparent;
+  }
+
+  /* INTRO */
+  .intro {
+    margin: 50px 0 70px;
+    padding: 0 30px;
+    border-left: 3px solid var(--gold);
+  }
+  .intro-en {
+    font-family: var(--serif); font-style: italic;
+    font-size: 22px; line-height: 1.5;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .intro-en em { color: var(--gold); }
+  .intro-tc {
+    font-family: var(--serif-tc); font-size: 14.5px;
+    color: var(--ink-dim); line-height: 1.7;
+  }
+  .intro-tc em { color: var(--gold); font-style: normal; font-weight: 500; }
+
+  /* CUSTOMIZATION BANNER */
+  .customize {
+    background: rgba(201, 169, 110, 0.08);
+    border: 1px dashed var(--gold);
+    padding: 20px 26px;
+    margin-bottom: 50px;
+    font-family: var(--serif-tc);
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .customize strong {
+    color: var(--gold);
+    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 80px; }
+  .section-num {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.25em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: 38px;
+    font-weight: 400; color: var(--parchment);
+    line-height: 1.15; margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .section-title em { font-style: italic; color: var(--gold); font-weight: 300; }
+  .section-title-tc {
+    font-family: var(--serif-tc); font-size: 16px;
+    color: var(--ink-dim); margin-bottom: 18px;
+    font-weight: 400;
+  }
+  .section-desc {
+    font-family: var(--serif); font-style: italic;
+    font-size: 16px; color: var(--ink-dim);
+    line-height: 1.6; margin-bottom: 32px;
+    max-width: 800px;
+  }
+  .section-desc-tc {
+    font-style: normal; font-family: var(--serif-tc);
+    display: block; margin-top: 4px; font-size: 14px;
+  }
+  .section-body p {
+    font-family: var(--serif-tc); font-size: 15px;
+    line-height: 1.85; margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .section-body p strong { color: var(--parchment); font-weight: 600; }
+  .section-body p em { color: var(--gold); font-style: italic; font-weight: 500; }
+
+  /* PRESSURE GRID */
+  .pressure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 28px 0;
+  }
+  .pressure-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 24px 26px;
+    border-top: 2px solid var(--warning);
+  }
+  .pressure-tag {
+    font-family: var(--mono); font-size: 9.5px;
+    letter-spacing: 0.2em; color: var(--warning);
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .pressure-title {
+    font-family: var(--serif); font-size: 19px;
+    font-weight: 500; color: var(--parchment);
+    line-height: 1.25; margin-bottom: 10px;
+  }
+  .pressure-text {
+    font-family: var(--serif-tc); font-size: 13px;
+    color: var(--ink-dim); line-height: 1.65;
+  }
+  .pressure-text strong { color: var(--parchment); }
+
+  /* STATS */
+  .stat-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin: 28px 0;
+    background: var(--bg-card); border: 1px solid var(--rule);
+  }
+  .stat-cell {
+    padding: 22px 18px; border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-cell-num {
+    font-family: var(--serif); font-size: 32px;
+    font-weight: 400; color: var(--gold);
+    line-height: 1; margin-bottom: 6px;
+  }
+  .stat-cell-num small {
+    font-size: 0.4em; color: var(--ink-dim);
+    font-family: var(--mono); margin-left: 2px;
+  }
+  .stat-cell-label {
+    font-family: var(--serif-tc); font-size: 13px;
+    color: var(--ink-dim); line-height: 1.5;
+  }
+
+  /* TIERS */
+  .tier-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .tier {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 32px 28px;
+    border-top: 3px solid;
+    position: relative;
+  }
+  .tier.bronze { border-top-color: #b87440; }
+  .tier.silver { border-top-color: #a8b3b8; }
+  .tier.gold { border-top-color: var(--gold); }
+  .tier-tag {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .tier.bronze .tier-tag { color: #b87440; }
+  .tier.silver .tier-tag { color: #a8b3b8; }
+  .tier.gold .tier-tag { color: var(--gold); }
+  .tier-name {
+    font-family: var(--serif); font-size: 28px;
+    font-weight: 500; color: var(--parchment);
+    margin-bottom: 4px; line-height: 1.1;
+  }
+  .tier-name em { font-style: italic; font-weight: 300; }
+  .tier-price {
+    font-family: var(--mono); font-size: 13px;
+    color: var(--ink-dim); margin-bottom: 18px;
+    letter-spacing: 0.05em;
+  }
+  .tier-deliverables {
+    list-style: none;
+    padding-top: 16px;
+    border-top: 1px dotted var(--rule);
+  }
+  .tier-deliverables li {
+    padding: 8px 0 8px 22px;
+    position: relative;
+    font-family: var(--serif-tc);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink);
+    border-bottom: 1px dotted rgba(212, 201, 168, 0.08);
+  }
+  .tier-deliverables li:last-child { border-bottom: none; }
+  .tier-deliverables li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .tier-deliverables li strong { color: var(--parchment); }
+
+  /* ESG MAP */
+  .esg-table {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .esg-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .esg-row:last-child { border-bottom: none; }
+  .esg-row.header {
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .esg-row.header .esg-cell {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; color: var(--parchment);
+    text-transform: uppercase; padding: 14px 18px;
+    font-weight: 600;
+  }
+  .esg-cell {
+    padding: 18px 20px;
+    border-right: 1px solid var(--rule);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .esg-cell:last-child { border-right: none; }
+  .esg-framework {
+    font-family: var(--serif); font-size: 17px;
+    font-weight: 500; color: var(--gold);
+  }
+  .esg-indicator {
+    font-family: var(--serif-tc); color: var(--ink);
+  }
+  .esg-indicator strong { color: var(--parchment); }
+  .esg-contribution {
+    font-family: var(--serif-tc); color: var(--ink-dim);
+    font-size: 13.5px;
+  }
+
+  /* COMPANY TARGETS */
+  .targets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 30px;
+  }
+  .target-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 26px 28px;
+  }
+  .target-name {
+    font-family: var(--serif); font-size: 22px;
+    font-weight: 500; color: var(--parchment);
+    margin-bottom: 6px;
+  }
+  .target-tag {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--gold); letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .target-context {
+    font-family: var(--serif-tc); font-size: 13.5px;
+    color: var(--ink-dim); line-height: 1.7;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .target-context strong { color: var(--parchment); }
+  .target-angle-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; color: var(--ink-dim);
+    text-transform: uppercase; margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .target-angle {
+    font-family: var(--serif-tc); font-size: 13.5px;
+    color: var(--ink); line-height: 1.7;
+  }
+  .target-angle em { color: var(--gold); font-style: italic; font-weight: 500; }
+
+  /* ASK */
+  .ask {
+    background: var(--bg-card);
+    border: 2px solid var(--gold);
+    padding: 36px 40px;
+    margin: 50px 0;
+  }
+  .ask-tag {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.28em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .ask-title {
+    font-family: var(--serif); font-size: 30px;
+    font-weight: 500; color: var(--parchment);
+    margin-bottom: 18px; line-height: 1.2;
+  }
+  .ask-title em { font-style: italic; color: var(--gold); }
+  .ask-body {
+    font-family: var(--serif-tc); font-size: 15px;
+    line-height: 1.8; color: var(--ink); margin-bottom: 16px;
+  }
+  .ask-list { list-style: none; counter-reset: askctr; }
+  .ask-list li {
+    padding-left: 28px; padding-top: 8px; padding-bottom: 8px;
+    position: relative; font-family: var(--serif-tc);
+    font-size: 14.5px; line-height: 1.65; color: var(--ink);
+  }
+  .ask-list li::before {
+    content: counter(askctr, decimal-leading-zero);
+    counter-increment: askctr;
+    position: absolute; left: 0; top: 8px;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--gold); font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .ask-list li strong { color: var(--parchment); }
+
+  /* LETTER */
+  .closing-letter {
+    margin-top: 80px;
+    padding: 50px 40px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+  }
+  .letter-head {
+    text-align: center; margin-bottom: 30px;
+    padding-bottom: 20px; border-bottom: 1px solid var(--rule);
+  }
+  .letter-tag {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.25em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .letter-title {
+    font-family: var(--serif); font-size: 26px;
+    color: var(--parchment); font-weight: 500;
+  }
+  .letter-body {
+    font-family: var(--serif-tc); font-size: 15px;
+    line-height: 1.85; color: var(--ink);
+  }
+  .letter-body p { margin-bottom: 14px; text-align: justify; }
+  .letter-body p strong { color: var(--parchment); }
+  .letter-signature {
+    margin-top: 30px; padding-top: 20px;
+    border-top: 1px dotted var(--rule);
+    text-align: right;
+    font-family: var(--serif-tc);
+    color: var(--ink-dim); font-size: 14px;
+  }
+  .letter-signature .org {
+    color: var(--parchment); font-weight: 600;
+    font-size: 16px; margin-bottom: 6px;
+  }
+  .blank-inline {
+    display: inline-block; min-width: 140px;
+    border-bottom: 1px dashed var(--gold);
+    color: transparent;
+  }
+
+  /* CLOSING QUOTE */
+  .closing-quote {
+    margin-top: 60px; padding: 40px 30px;
+    text-align: center;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .closing-quote-text {
+    font-family: var(--serif); font-style: italic;
+    font-size: 24px; color: var(--ink);
+    line-height: 1.5; margin-bottom: 10px;
+  }
+  .closing-quote-text em { color: var(--gold); }
+  .closing-quote-attr {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--ink-dim); letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer {
+    margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: var(--mono); font-size: 10px;
+    color: var(--ink-faint); letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; color: #000; padding: 0; background-image: none; }
+    .container { max-width: none; }
+    .cover-title-en, .section-title, .tier-name, .target-name,
+    .ask-title, .letter-title, .closing-quote-text, .stat-cell-num,
+    .esg-framework, .letter-signature .org, .pressure-title { color: #0F2C4A; }
+    .cover-title-en em, .section-title em, .tier-name em, .ask-title em,
+    .closing-quote-text em { color: #B87440; }
+    .section-num, .tier-tag, .ask-tag, .cover-tag, .letter-tag,
+    .target-tag, .pressure-tag, .customize strong { color: #B87440; }
+    .tier, .esg-table, .ask, .target-card, .stat-grid,
+    .closing-letter, .pressure-card, .customize {
+      background: white; border-color: #CCC;
+    }
+    .closing-quote, .cover, .intro { border-color: #ccc; }
+    .section { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 30px 18px; }
+    .cover-title-en { font-size: 42px; }
+    .section-title { font-size: 26px; }
+    .pressure-grid, .tier-grid, .targets { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-cell:nth-child(2n) { border-right: none; }
+    .stat-cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .esg-row { grid-template-columns: 1fr; }
+    .esg-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="cover-tag">CORPORATE ESG PARTNERSHIP · 企業永續合作提案</div>
+    <h1 class="cover-title-en">The <em>Cooling</em> Dividend</h1>
+    <div class="cover-title-tc">AI 散熱供應鏈 × 海洋治理 ESG 合作提案</div>
+    <div class="cover-meta">
+      <div>致 <span class="blank">______</span>(公司名稱)</div>
+      <div>Submitted by Let's Do It Taiwan</div>
+      <div>Year <span class="blank">______</span> · Month <span class="blank">______</span></div>
+    </div>
+  </header>
+
+  <!-- CUSTOMIZATION BANNER -->
+  <div class="customize">
+    <strong>⌖ TEMPLATE NOTE · 客製化提示</strong>
+    本提案為「AI 散熱供應鏈通用模板」,可寄送對象包括<strong style="color:var(--gold); font-family:inherit; font-size:14px; letter-spacing:0; display:inline">台達電(2308)、奇鋐(3017)、雙鴻(3324)、川湖(2059)、Auras 雙鴻、AVC 等散熱供應鏈廠商</strong>。寄送前請依目標公司客製:封面與致函抬頭、Section 4 公司專屬角度、贊助金額範圍與具體 ESG 報告書框架。
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-en">
+      "1GW 的 AI data center 的用電量,約等於 30 萬人的用電量。"
+      <br>—— <em>台達電董事長 鄭平</em>(2025 年 11 月)
+    </div>
+    <div class="intro-tc">
+      AI 浪潮在 2025 年將台灣散熱供應鏈推上歷史高峰——台達電 AI 基礎建設營收 <em>年增 546%</em>、整體散熱產業預估 2026 年達 <em>3,538 億</em>(2024 兩倍以上)。但同一個浪潮也對台灣的水、電、海岸構成前所未有的壓力。本提案邀請貴公司贊助本團體主導的「<em>淨灘 2.0 — 水域生物探索平台</em>」(獲選為 <em>全球 211 國中 22 個代表性故事之一</em>,2026 年 4 月將於歐洲議會展出),以可量化、可寫入 ESG 報告書的方式,把這場紅利的一部分,投資回給承擔成本的太平洋。
+    </div>
+  </div>
+
+  <!-- SECTION 1: WHY NOW -->
+  <section class="section">
+    <div class="section-num">SECTION ONE · 為什麼是現在</div>
+    <h2 class="section-title">Three <em>ESG Pressures</em> Now Converging</h2>
+    <div class="section-title-tc">2026 — 三股 ESG 壓力同時收緊</div>
+    <p class="section-desc">
+      The cooling supply chain isn't just enjoying record revenue — it's also entering a new era of disclosure pressure, where ESG performance directly impacts valuation.
+      <span class="section-desc-tc">散熱供應鏈不只是享受空前營收,也正進入一個 ESG 揭露壓力空前的時代——永續表現直接影響估值。</span>
+    </p>
+
+    <div class="pressure-grid">
+      <div class="pressure-card">
+        <div class="pressure-tag">PRESSURE 01 · 揭露</div>
+        <div class="pressure-title">永續資訊強制揭露</div>
+        <div class="pressure-text">金管會自 2025 年起分階段強制上市櫃公司揭露 ESG 資訊;<strong>SASB、TCFD、ISSB IFRS S1/S2</strong> 框架全面推進。<strong>水資源、廢棄物</strong>是 AI 散熱業必揭露項目。</div>
+      </div>
+      <div class="pressure-card">
+        <div class="pressure-tag">PRESSURE 02 · CBAM</div>
+        <div class="pressure-title">歐盟碳邊境調整機制</div>
+        <div class="pressure-text">2026 年 CBAM 正式收費,擴及散熱與電源產品。<strong>產品碳足跡</strong>成為出口歐盟必要條件。需要可驗證的減碳實績。</div>
+      </div>
+      <div class="pressure-card">
+        <div class="pressure-tag">PRESSURE 03 · 客戶</div>
+        <div class="pressure-title">下游 ODM/CSP 要求</div>
+        <div class="pressure-text">Google、Microsoft、Meta、Amazon 等 <strong>24/7 CFE</strong> 目標倒逼供應鏈;鴻海、廣達、緯創、緯穎在 ESG 評鑑中對供應商<strong>水、廢棄物揭露</strong>的權重逐年提高。</div>
+      </div>
+    </div>
+
+    <div class="section-body">
+      <p>傳統的 CSR 模式(每年辦一場員工淨灘、捐款幾家環保團體)已經<strong>不足以滿足上述三股壓力</strong>。新的標準要求:<em>可量化、可驗證、可追蹤、可寫入年度報告書</em>。</p>
+      <p>本提案的核心主張是:把貴公司的環境投入,從「<strong>CSR 公關活動</strong>」升級為「<em>ESG 績效合作</em>」——每一筆投入都產生可揭露的環境指標,直接為貴公司的永續報告書提供素材。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: STATS -->
+  <section class="section">
+    <div class="section-num">SECTION TWO · 規模背景</div>
+    <h2 class="section-title">The <em>Cooling</em> Sector by Numbers</h2>
+    <div class="section-title-tc">散熱供應鏈與其環境足跡的規模</div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-cell-num">2,666<small>億</small></div>
+        <div class="stat-cell-label">2025 年台灣散熱業產值(NT$)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">63.8<small>%</small></div>
+        <div class="stat-cell-label">2025 年產業年增率</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">15<small>%</small></div>
+        <div class="stat-cell-label">半導體業佔全國用電比例</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-num">30<small>萬</small></div>
+        <div class="stat-cell-label">1 GW AI 中心 = 多少人用電</div>
+      </div>
+    </div>
+
+    <div class="section-body">
+      <p>同一個產業——以台達電(2025 Q1-Q3 AI 基建營收 <strong>1,229 億、年增 546%</strong>)為代表的散熱供應鏈——正在<strong>從台灣的水、電、土地中提取前所未有的價值</strong>,同時也在<strong>對台灣的環境承擔前所未有的責任壓力</strong>。</p>
+      <p>本提案邀請貴公司,把營收的一個極小比例(我們建議 <em>0.05% – 0.3%</em>,視 ESG 戰略而定),投入到一個可以同時產生:<strong>環境影響數據 + 媒體曝光 + ESG 報告書素材 + 員工參與</strong>的長期合作。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TIERS -->
+  <section class="section">
+    <div class="section-num">SECTION THREE · 三種合作層級</div>
+    <h2 class="section-title">Three <em>Investment Tiers</em></h2>
+    <div class="section-title-tc">三種投入層級 — 從試水到深度合作</div>
+    <p class="section-desc">
+      Each tier scales up the same proven program — our existing 淨灘 2.0 / 環境清潔行動 2.0 platform — already in joint operation with National Taiwan Ocean University.
+      <span class="section-desc-tc">三層級不是「不同活動」,而是「同一套已運作的淨灘 2.0 平台」的不同規模。完全建立在現有合作之上,無須重新發明。</span>
+    </p>
+
+    <!-- WHAT IS 淨灘 2.0 -->
+    <div style="background: rgba(201, 169, 110, 0.06); border: 1px solid var(--rule); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 24px 0 32px;">
+      <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 600;">⌖ 本提案的核心活動 · 淨灘 2.0 是什麼</div>
+      <div style="font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--parchment); line-height: 1.3; margin-bottom: 8px;">
+        Beach Cleanup <em style="color: var(--gold); font-style: italic; font-weight: 300;">2.0</em> · 水域生物探索平台
+      </div>
+      <div style="font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-dim); margin-bottom: 14px;">
+        "我們不只清了海灘,我們傾聽了珊瑚告訴我們的事。"
+      </div>
+      <div style="font-family: var(--serif-tc); font-size: 14.5px; line-height: 1.8; color: var(--ink); margin-bottom: 14px;">
+        本團體主導的長期計畫,結合<strong style="color: var(--parchment)">公民科學 × 親海打掃 × eDNA 環境 DNA 檢測</strong>,核心科學框架為「<strong style="color: var(--gold)">珊瑚全共生體 Coral Holobiont</strong>」——重新定義保育對象,從一隻動物變成一套微型生物防禦系統。科學夥伴包括 <strong style="color: var(--parchment)">TCRS 台灣珊瑚礁學會</strong>(湯森林博士)與 <strong style="color: var(--parchment)">國立海洋大學海生所</strong>(NGS 次世代定序)。
+      </div>
+      <div style="background: rgba(127, 176, 105, 0.08); border-left: 3px solid var(--green); padding: 14px 18px; margin-bottom: 18px;">
+        <div style="font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.18em; margin-bottom: 6px; font-weight: 700;">★ 2026 國際肯定</div>
+        <div style="font-family: var(--serif-tc); font-size: 14px; color: var(--ink); line-height: 1.7;">
+          台灣淨灘 2.0 從全球 <strong style="color:var(--parchment)">211 個 WCD 參與國</strong>中獲選為 <strong style="color:var(--green)">22 個最具代表性行動故事之一</strong>,將於 <strong style="color:var(--parchment)">2026 年 4 月於歐洲議會(布魯塞爾)</strong> 影響力攝影展登場(愛沙尼亞總部首站)。
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+        <div style="padding: 12px 14px; background: var(--bg); border: 1px solid var(--rule);">
+          <div style="font-family: var(--mono); font-size: 9.5px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 4px;">METHODOLOGY</div>
+          <div style="font-family: var(--serif-tc); font-size: 12.5px; color: var(--ink); line-height: 1.5;">eDNA 採集 → NGS 次世代定序 → 珊瑚微生物健康指標</div>
+        </div>
+        <div style="padding: 12px 14px; background: var(--bg); border: 1px solid var(--rule);">
+          <div style="font-family: var(--mono); font-size: 9.5px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 4px;">VOLUNTEERS</div>
+          <div style="font-family: var(--serif-tc); font-size: 12.5px; color: var(--ink); line-height: 1.5;">Enode 公民科學家三層培訓體系(基礎/實務/進階)</div>
+        </div>
+        <div style="padding: 12px 14px; background: var(--bg); border: 1px solid var(--rule);">
+          <div style="font-family: var(--mono); font-size: 9.5px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 4px;">FOUR DOMAINS</div>
+          <div style="font-family: var(--serif-tc); font-size: 12.5px; color: var(--ink); line-height: 1.5;">Coastal 海邊 / Community 社區 / Campus 校園 / <strong style="color: var(--parchment)">Enterprise 企業</strong></div>
+        </div>
+        <div style="padding: 12px 14px; background: var(--bg); border: 1px solid var(--rule);">
+          <div style="font-family: var(--mono); font-size: 9.5px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 4px;">ANCHOR</div>
+          <div style="font-family: var(--serif-tc); font-size: 12.5px; color: var(--ink); line-height: 1.5;">9 月 20 日 世界清潔日年度旗艦活動</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier-grid">
+
+      <!-- BRONZE -->
+      <div class="tier bronze">
+        <div class="tier-tag">TIER 01 · 試水</div>
+        <h3 class="tier-name">Bronze</h3>
+        <div class="tier-price">NT$ 300,000 – 800,000 / 年</div>
+        <ul class="tier-deliverables">
+          <li><strong>4 場 淨灘 2.0 行動</strong>(企業包場,每場 30–50 位員工)</li>
+          <li>含<strong>細網濾砂清除微塑膠</strong> + ICC 標準資料蒐集</li>
+          <li>員工接受 <strong>Enode 公民科學家培訓</strong>並獲頒證書(基礎層)</li>
+          <li>年度環境數據報告,可寫入 ESG 報告書</li>
+          <li>World Cleanup Day 9/20 企業徽章</li>
+          <li>媒體露出:Let's Do It Taiwan 官網與社群</li>
+          <li><strong>適合:首次參與、想試水溫的散熱廠</strong></li>
+        </ul>
+      </div>
+
+      <!-- SILVER -->
+      <div class="tier silver">
+        <div class="tier-tag">TIER 02 · 深耕</div>
+        <h3 class="tier-name">Silver</h3>
+        <div class="tier-price">NT$ 1,500,000 – 4,000,000 / 年</div>
+        <ul class="tier-deliverables">
+          <li>Bronze 全部內容</li>
+          <li><strong>12–20 場 淨灘 2.0 行動 / 年</strong>(企業包場 + 公開場混合)</li>
+          <li>共同冠名「<strong>○○○ 水域守護夥伴計畫</strong>」</li>
+          <li>贊助 <strong>1 場 Enode 進階培力說明會</strong>(全台 10 場其中 1 場)</li>
+          <li><strong>eDNA 採樣加值</strong>:1 場由 TCRS × NTOU 聯合分析,產出珊瑚微生物健康基線報告</li>
+          <li>9/20 成果發表會共同主辦</li>
+          <li>員工志工日(年度 1–2 次,可結合內訓)</li>
+          <li>ESG 報告書深度案例(雙方共撰)</li>
+          <li><strong>適合:有具體 ESG 目標、需要案例素材的公司</strong></li>
+        </ul>
+      </div>
+
+      <!-- GOLD -->
+      <div class="tier gold">
+        <div class="tier-tag">TIER 03 · 主導</div>
+        <h3 class="tier-name">Gold</h3>
+        <div class="tier-price">NT$ 5,000,000+ / 年</div>
+        <ul class="tier-deliverables">
+          <li>Silver 全部內容</li>
+          <li><strong>全台 50 個觀測站冠名贊助</strong>(對應淨灘 2.0 全規模)</li>
+          <li>冠名「<strong>○○○ 公民科學中心</strong>」(虛擬或實體)</li>
+          <li><strong>多場 eDNA 採樣 × NGS 定序</strong>,共建亞洲首套珊瑚微生物健康基線</li>
+          <li>共同發起「<strong>AI 水透明度指標</strong>」產業倡議</li>
+          <li>3 年期 MOU 結盟</li>
+          <li>共同向文化部、海委會申請配合款</li>
+          <li>國際串連:對接 Let's Do It World 211 國網絡 + 2026 歐洲議會展示</li>
+          <li>產業領導地位:列為 Climate Neutral Data Centre Pact 區域代表</li>
+          <li><strong>適合:志在永續領導品牌(如台達電)</strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: TARGETED COMPANIES -->
+  <section class="section">
+    <div class="section-num">SECTION FOUR · 公司客製角度</div>
+    <h2 class="section-title">Tailored <em>Angles</em> by Company</h2>
+    <div class="section-title-tc">依目標公司客製化合作角度</div>
+    <p class="section-desc">
+      Each company in the cooling supply chain has a distinct ESG narrative and strategic position. The same partnership can be framed very differently.
+      <span class="section-desc-tc">散熱供應鏈中每家公司的 ESG 故事與戰略定位不同,同一個合作可以有非常不同的詮釋角度。</span>
+    </p>
+
+    <div class="targets">
+
+      <!-- DELTA -->
+      <div class="target-card">
+        <div class="target-name">台達電 Delta Electronics(2308)</div>
+        <div class="target-tag">▎永續領導品牌定位</div>
+        <div class="target-context">
+          <strong>背景:</strong>創辦人鄭崇華長期以環境承諾立基;Brand News 雙月刊已是永續溝通典範;2025 AI 基建營收 1,229 億、年增 546%。董事長鄭平已親口表態「資料中心 15-30% 電力損耗用於散熱」——直接點出議題。
+        </div>
+        <div class="target-angle-label">PROPOSED ANGLE · 合作角度</div>
+        <div class="target-angle">
+          建議 <em>Gold Tier</em>:推動「<em>AI 水透明度標章</em>」共同倡議,讓台達電從「節能領導」升級為「<strong>透明度領導</strong>」。這是 Brand News 永續溝通的下一個敘事高度——不只說自己有多省,而是讓整個產業可比較。
+        </div>
+      </div>
+
+      <!-- AURAS -->
+      <div class="target-card">
+        <div class="target-name">奇鋐 Auras Technology(3017)</div>
+        <div class="target-tag">▎水冷市場龍頭</div>
+        <div class="target-context">
+          <strong>背景:</strong>NVIDIA GB200 水冷板市占率 5 成;2025 水冷產品佔營收 26%、預估 EPS 35.42 元。<strong>產品名稱直接是「水冷」</strong>——對水資源議題的責任最直接。
+        </div>
+        <div class="target-angle-label">PROPOSED ANGLE · 合作角度</div>
+        <div class="target-angle">
+          建議 <em>Silver Tier</em>:冠名「<em>奇鋐 水域守護夥伴計畫</em>」,直接呼應水冷產品線。可透過淨灘 2.0 既有的<strong>海洋大學合作架構</strong>,新增 12–20 場以「<strong>水冷產業 × 水域生物多樣性</strong>」為主題的觀測活動,並產出年度水資源評估報告。
+        </div>
+      </div>
+
+      <!-- 雙鴻 -->
+      <div class="target-card">
+        <div class="target-name">雙鴻 Auras Technology(3324)</div>
+        <div class="target-tag">▎NVIDIA RDL 認證夥伴</div>
+        <div class="target-context">
+          <strong>背景:</strong>通過 NVIDIA RDL 驗證,水冷散熱零組件 2025 佔營收 41%;VGA 散熱年增 20%。客戶多為國際 CSP 廠,ESG 評鑑壓力來自下游。
+        </div>
+        <div class="target-angle-label">PROPOSED ANGLE · 合作角度</div>
+        <div class="target-angle">
+          建議 <em>Bronze→Silver Tier</em>:先以 Bronze 進入,累積 ESG 案例,進入下游 CSP 的<em>偏好供應商名單</em>;若年度評鑑帶來新客戶,升級至 Silver。
+        </div>
+      </div>
+
+      <!-- 川湖 -->
+      <div class="target-card">
+        <div class="target-name">川湖 King Slide(2059)</div>
+        <div class="target-tag">▎全球滑軌龍頭</div>
+        <div class="target-context">
+          <strong>背景:</strong>伺服器市場供貨比重超過 6 成;高階滑軌已佔營收 4 成以上;單櫃 H100 滑軌 800-1,200 美元。<strong>產品看似與環境距離較遠,反而是 ESG 故事的差異化機會</strong>。
+        </div>
+        <div class="target-angle-label">PROPOSED ANGLE · 合作角度</div>
+        <div class="target-angle">
+          建議 <em>Bronze Tier</em>:作為「<em>產業鏈中堅企業的永續責任</em>」案例。川湖不在第一線輿論,但<strong>正因低調,參與環境行動可建立「永續優等生」識別</strong>。
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: ESG MAP -->
+  <section class="section">
+    <div class="section-num">SECTION FIVE · ESG 對位</div>
+    <h2 class="section-title">ESG <em>Framework</em> Alignment</h2>
+    <div class="section-title-tc">本提案與國際 ESG 揭露框架的對位</div>
+    <p class="section-desc">
+      How each program contributes to disclosable ESG metrics across major frameworks.
+      <span class="section-desc-tc">每個合作模式對應主要 ESG 框架的可揭露指標。</span>
+    </p>
+
+    <div class="esg-table">
+      <div class="esg-row header">
+        <div class="esg-cell">框架</div>
+        <div class="esg-cell">指標 / 揭露項目</div>
+        <div class="esg-cell">本合作的具體貢獻</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-cell"><span class="esg-framework">SASB</span></div>
+        <div class="esg-cell esg-indicator"><strong>TC-HW-410a.3</strong> 電子廢棄物收回率;<strong>TC-HW-440a.1</strong> 關鍵材料風險管理</div>
+        <div class="esg-cell esg-contribution">海岸廢棄物清除量、塑膠減量量化、產品包裝減塑承諾(Plastic-Free Stage 對接的減塑數據)</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-cell"><span class="esg-framework">TCFD</span></div>
+        <div class="esg-cell esg-indicator"><strong>Metrics & Targets</strong> 水資源、廢棄物;<strong>實體風險</strong>海平面上升</div>
+        <div class="esg-cell esg-contribution">水質監測數據;太平洋升溫影響本土供應鏈的風險論述材料;認養海岸的長期觀測</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-cell"><span class="esg-framework">GRI</span></div>
+        <div class="esg-cell esg-indicator"><strong>303</strong> 水資源管理;<strong>306</strong> 廢棄物;<strong>413</strong> 在地社區</div>
+        <div class="esg-cell esg-contribution">在地社區參與量化(員工志工時數、社區活動人數)、減廢實績</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-cell"><span class="esg-framework">ISSB IFRS S2</span></div>
+        <div class="esg-cell esg-indicator">氣候相關財務風險與機會揭露;轉型策略</div>
+        <div class="esg-cell esg-contribution">「<strong>AI 水透明度標章</strong>」可作為轉型策略的具體佐證</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-cell"><span class="esg-framework">SDG</span></div>
+        <div class="esg-cell esg-indicator"><strong>SDG 6, 13, 14, 17</strong>(水、氣候、海洋、夥伴)</div>
+        <div class="esg-cell esg-contribution">直接對應 4 個 SDG;World Cleanup Day 為聯合國認可國際日</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-cell"><span class="esg-framework">CDP</span></div>
+        <div class="esg-cell esg-indicator">Water Security、Forests 評等</div>
+        <div class="esg-cell esg-contribution">具體水資源行動證據,有助於提升 CDP Water 評等(A-list 候選佐證)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ASK -->
+  <section class="section">
+    <div class="ask">
+      <div class="ask-tag">⌖ THE ASK · 我們希望貴公司</div>
+      <h2 class="ask-title">What We <em>Hope</em></h2>
+      <div class="ask-body">本提案的下一步,不是要求即刻簽約,而是希望開啟一個深度對話,讓 ESG 部門評估這個合作是否符合貴公司的 ESG 戰略地圖。具體希望貴公司考慮以下三項中的<strong>任一項或多項</strong>:</div>
+      <ol class="ask-list">
+        <li><strong>會面對話 · An initial meeting</strong> — 提供 45–60 分鐘的初步對話機會,讓 Let's Do It Taiwan 與貴公司永續/ESG/公共事務部門面對面評估</li>
+        <li><strong>2027 年度 ESG 規劃納入 · 2027 ESG planning</strong> — 在 2027 年 ESG 預算規劃時,將本合作列為候選項目之一</li>
+        <li><strong>9/20 限量贊助 · 9/20 limited sponsorship</strong> — 先以 Bronze Tier 試辦,以 World Cleanup Music Day 9/20 為錨點,評估 ROI 後決定是否升級</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CLOSING LETTER -->
+  <section class="closing-letter">
+    <div class="letter-head">
+      <div class="letter-tag">FORMAL COVER LETTER · 致函</div>
+      <div class="letter-title">致 <span class="blank-inline"></span> 永續長 / ESG 主管</div>
+    </div>
+    <div class="letter-body">
+      <p><span class="blank-inline"></span> 永續長(或 ESG 部門主管) 鈞鑒:</p>
+      <p>謹代表「來此淨國際志工團」(Let's Do It Taiwan)致函。本團體為內政部立案之社團法人,屬於源自愛沙尼亞、現於 190 國推展的全球公民環境運動 Let's Do It! World 之台灣合作夥伴。每年 9 月 20 日的世界清潔日(World Cleanup Day),自 2024 年起已正式列入聯合國國際日。2025 年全球參與人數達 2,500 萬。</p>
+      <p>本提案的核心觀察是:<strong>AI 與半導體紅利在 2025 年將貴公司及整個散熱供應鏈推上前所未有的營收高點,同時也讓 ESG 揭露壓力在 2026 年達到新的標準</strong>。傳統 CSR 模式(每年一次員工淨灘、捐款數家環保團體)已不足以對應 SASB、TCFD、ISSB IFRS S2、CBAM 等框架的揭露要求。</p>
+      <p>本提案邀請貴公司把環境投入,從「CSR 公關活動」升級為「<strong>ESG 績效合作</strong>」——每一筆投入都產生可量化、可揭露、可寫入年度報告書的具體成果。三種投入層級(Bronze、Silver、Gold)涵蓋從試水到產業領導定位的不同戰略,可依貴公司 ESG 戰略地圖選擇。</p>
+      <p>我們深知 ESG 部門時間寶貴。本提案僅為對話起點,任何一種程度的初步交流都極具價值。如蒙惠允撥冗會面,可採視訊或實體拜訪,時間長度由貴方決定。</p>
+      <p>耑此</p>
+      <p>敬頌</p>
+      <p style="padding-left: 36px"><strong>商祺</strong></p>
+    </div>
+    <div class="letter-signature">
+      <div class="org">來此淨國際志工團 LET'S DO IT! Taiwan</div>
+      <div><span class="blank-inline"></span>(發文人姓名與職稱)</div>
+      <div>電話:<span class="blank-inline"></span> · 信箱:<span class="blank-inline"></span></div>
+    </div>
+  </section>
+
+  <!-- CLOSING QUOTE -->
+  <div class="closing-quote">
+    <div class="closing-quote-text">"散熱供應鏈讓 AI 變得可能。<br><em>同一個產業,也可以讓海洋變得可永續。</em>"</div>
+    <div class="closing-quote-attr">Cooling Dividend · Let's Do It Taiwan</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    Cooling Dividend ESG Proposal · Let's Do It Taiwan · 2026
+  </footer>
+
+</div>
+</body>
+</html>
